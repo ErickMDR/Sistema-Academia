@@ -21,7 +21,7 @@ namespace Sistema_Academia.Presentacion
             buscar.Click += buscar_Click_1;
 
             CargarDatosPersonas();
-            AgregarHeaders();
+            //AgregarHeaders();
         }
 
         private void CargarDatosPersonas()
@@ -69,7 +69,7 @@ namespace Sistema_Academia.Presentacion
                 Nombre = row.Cells["persona_no"].Value.ToString(),
                 Apellido = row.Cells["persona_ap"].Value.ToString(),
                 Cedula = Convert.ToInt32(row.Cells["persona_ci"].Value),
-                TipoPersona = row.Cells["tipopersonaid"].Value.ToString()
+                TipoPersona = row.Cells["tipo_persona_de"].Value.ToString()
             };
 
             using var form = new FormAgregarPersona(persona);

@@ -106,7 +106,7 @@
             Controls.Add(panel);
             Name = "FormAgregarMateria";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Agregar Materia";
+            Text = "Materia";
             panel.ResumeLayout(false);
             panel.PerformLayout();
             ResumeLayout(false);

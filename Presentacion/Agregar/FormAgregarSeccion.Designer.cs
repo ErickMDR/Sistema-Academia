@@ -108,7 +108,7 @@
             Controls.Add(panel);
             Name = "FormAgregarSeccion";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Agregar Sección";
+            Text = "Sección";
             panel.ResumeLayout(false);
             panel.PerformLayout();
             ResumeLayout(false);

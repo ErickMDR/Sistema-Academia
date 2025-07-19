@@ -21,7 +21,7 @@ namespace Sistema_Academia.Presentacion
             buscar.Click += buscar_Click;
 
             CargarDatosCursos();
-            ConfigurarEncabezados();
+            //ConfigurarEncabezados();
         }
 
         private void CargarDatosCursos()

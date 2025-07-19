@@ -18,7 +18,7 @@
 },
 
   "Persona": {
-    "BuscarCi": "SELECT persona_id, persona_no, persona_ap, persona_ci, tipo_persona_id FROM persona WHERE persona_ci = @cedula;",
+    "BuscarCi": "SELECT persona_id, persona_no, persona_ap, persona_ci, tipo_persona_id FROM persona WHERE persona_ci = @ci;",
     "Crear": "INSERT INTO persona (persona_no, persona_ap, persona_ci, tipo_persona_id) VALUES (@nombre, @apellido, @ci, @tipoPersona);",
     "Leer": "SELECT p.persona_no, p.persona_ap, p.persona_ci, tp.tipo_persona_de FROM persona p JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id;",
     "Eliminar": "DELETE FROM persona WHERE persona_no = @nombre AND persona_ap = @apellido",
@@ -50,7 +50,7 @@
 
   "Seccion": {
     "Buscar": "SELECT * FROM seccion WHERE seccion_de ILIKE @descripcion;",
-    "Crear": "INSERT INTO seccion (seccion_de) VALUES (@seccion);",
+    "Crear": "INSERT INTO seccion (seccion_de) VALUES (@descripcion);",
     "Leer": "SELECT * FROM seccion;",
     "Eliminar": "DELETE FROM seccion WHERE seccion_id = @seccionId;",
     "Actualizar": "UPDATE seccion SET seccion_de = @descripcion WHERE seccion_id = @seccionId;"

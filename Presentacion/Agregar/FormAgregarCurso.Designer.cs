@@ -29,18 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            cmbSeccion = new ComboBox();
+            cmbMateria = new ComboBox();
             title = new Label();
             aceptar = new Button();
             txtcedula = new TextBox();
             labelci = new Label();
-            txtapellido = new TextBox();
-            labelna = new Label();
-            labelap = new Label();
-            txtnombre = new TextBox();
             labelsec = new Label();
             labelmateria = new Label();
-            cmbMateria = new ComboBox();
-            cmbSeccion = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,23 +49,41 @@
             panel1.Controls.Add(aceptar);
             panel1.Controls.Add(txtcedula);
             panel1.Controls.Add(labelci);
-            panel1.Controls.Add(txtapellido);
-            panel1.Controls.Add(labelna);
-            panel1.Controls.Add(labelap);
-            panel1.Controls.Add(txtnombre);
             panel1.Controls.Add(labelsec);
             panel1.Controls.Add(labelmateria);
             panel1.Location = new Point(-5, -4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(492, 663);
+            panel1.Size = new Size(492, 560);
             panel1.TabIndex = 31;
+            // 
+            // cmbSeccion
+            // 
+            cmbSeccion.BackColor = Color.FromArgb(13, 13, 13);
+            cmbSeccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbSeccion.ForeColor = Color.White;
+            cmbSeccion.FormattingEnabled = true;
+            cmbSeccion.Location = new Point(81, 324);
+            cmbSeccion.Name = "cmbSeccion";
+            cmbSeccion.Size = new Size(314, 38);
+            cmbSeccion.TabIndex = 43;
+            // 
+            // cmbMateria
+            // 
+            cmbMateria.BackColor = Color.FromArgb(13, 13, 13);
+            cmbMateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbMateria.ForeColor = Color.White;
+            cmbMateria.FormattingEnabled = true;
+            cmbMateria.Location = new Point(81, 242);
+            cmbMateria.Name = "cmbMateria";
+            cmbMateria.Size = new Size(314, 38);
+            cmbMateria.TabIndex = 42;
             // 
             // title
             // 
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = Color.White;
-            title.Location = new Point(119, 41);
+            title.Location = new Point(119, 51);
             title.Name = "title";
             title.Size = new Size(236, 36);
             title.TabIndex = 41;
@@ -83,7 +97,7 @@
             aceptar.FlatStyle = FlatStyle.Flat;
             aceptar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             aceptar.ForeColor = Color.Snow;
-            aceptar.Location = new Point(163, 563);
+            aceptar.Location = new Point(154, 416);
             aceptar.Name = "aceptar";
             aceptar.Size = new Size(162, 56);
             aceptar.TabIndex = 40;
@@ -97,7 +111,7 @@
             txtcedula.CharacterCasing = CharacterCasing.Lower;
             txtcedula.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtcedula.ForeColor = Color.White;
-            txtcedula.Location = new Point(81, 126);
+            txtcedula.Location = new Point(81, 152);
             txtcedula.Margin = new Padding(20);
             txtcedula.MaxLength = 20;
             txtcedula.Name = "txtcedula";
@@ -111,68 +125,18 @@
             labelci.AutoSize = true;
             labelci.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelci.ForeColor = Color.White;
-            labelci.Location = new Point(91, 93);
+            labelci.Location = new Point(91, 119);
             labelci.Name = "labelci";
             labelci.Size = new Size(85, 30);
             labelci.TabIndex = 35;
             labelci.Text = "Cédula:";
-            // 
-            // txtapellido
-            // 
-            txtapellido.BackColor = Color.FromArgb(13, 13, 13);
-            txtapellido.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtapellido.ForeColor = Color.White;
-            txtapellido.Location = new Point(81, 294);
-            txtapellido.Margin = new Padding(20);
-            txtapellido.MaxLength = 30;
-            txtapellido.Name = "txtapellido";
-            txtapellido.PlaceholderText = "Ingrese apellido";
-            txtapellido.ShortcutsEnabled = false;
-            txtapellido.Size = new Size(314, 37);
-            txtapellido.TabIndex = 36;
-            // 
-            // labelna
-            // 
-            labelna.AutoSize = true;
-            labelna.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelna.ForeColor = Color.White;
-            labelna.Location = new Point(91, 177);
-            labelna.Name = "labelna";
-            labelna.Size = new Size(99, 30);
-            labelna.TabIndex = 39;
-            labelna.Text = "Nombre:";
-            // 
-            // labelap
-            // 
-            labelap.AutoSize = true;
-            labelap.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelap.ForeColor = Color.White;
-            labelap.Location = new Point(91, 261);
-            labelap.Name = "labelap";
-            labelap.Size = new Size(98, 30);
-            labelap.TabIndex = 37;
-            labelap.Text = "Apellido:";
-            // 
-            // txtnombre
-            // 
-            txtnombre.BackColor = Color.FromArgb(13, 13, 13);
-            txtnombre.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtnombre.ForeColor = Color.White;
-            txtnombre.Location = new Point(81, 210);
-            txtnombre.Margin = new Padding(20);
-            txtnombre.MaxLength = 30;
-            txtnombre.Name = "txtnombre";
-            txtnombre.PlaceholderText = "Ingrese nombre";
-            txtnombre.ShortcutsEnabled = false;
-            txtnombre.Size = new Size(314, 37);
-            txtnombre.TabIndex = 38;
             // 
             // labelsec
             // 
             labelsec.AutoSize = true;
             labelsec.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelsec.ForeColor = Color.White;
-            labelsec.Location = new Point(91, 445);
+            labelsec.Location = new Point(91, 291);
             labelsec.Name = "labelsec";
             labelsec.Size = new Size(92, 30);
             labelsec.TabIndex = 32;
@@ -183,43 +147,21 @@
             labelmateria.AutoSize = true;
             labelmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelmateria.ForeColor = Color.White;
-            labelmateria.Location = new Point(91, 363);
+            labelmateria.Location = new Point(91, 209);
             labelmateria.Name = "labelmateria";
             labelmateria.Size = new Size(92, 30);
             labelmateria.TabIndex = 31;
             labelmateria.Text = "Materia:";
             // 
-            // cmbMateria
-            // 
-            cmbMateria.BackColor = Color.FromArgb(13, 13, 13);
-            cmbMateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbMateria.ForeColor = Color.White;
-            cmbMateria.FormattingEnabled = true;
-            cmbMateria.Location = new Point(81, 396);
-            cmbMateria.Name = "cmbMateria";
-            cmbMateria.Size = new Size(314, 38);
-            cmbMateria.TabIndex = 42;
-            // 
-            // cmbSeccion
-            // 
-            cmbSeccion.BackColor = Color.FromArgb(13, 13, 13);
-            cmbSeccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbSeccion.ForeColor = Color.White;
-            cmbSeccion.FormattingEnabled = true;
-            cmbSeccion.Location = new Point(81, 478);
-            cmbSeccion.Name = "cmbSeccion";
-            cmbSeccion.Size = new Size(314, 38);
-            cmbSeccion.TabIndex = 43;
-            // 
             // FormAgregarCurso
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(482, 655);
+            ClientSize = new Size(482, 555);
             Controls.Add(panel1);
             Name = "FormAgregarCurso";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Agregar Curso";
+            Text = "Curso";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

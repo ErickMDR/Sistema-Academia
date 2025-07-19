@@ -192,7 +192,7 @@
             Controls.Add(panel);
             Name = "FormAgregarPersona";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Agregar";
+            Text = "Persona";
             panel.ResumeLayout(false);
             panel.PerformLayout();
             ResumeLayout(false);
