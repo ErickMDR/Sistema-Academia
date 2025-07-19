@@ -16,6 +16,7 @@ namespace Sistema_Academia.Presentacion.Filtros
         {
             InitializeComponent();
             this.IsMdiContainer = true;
+            this.AcceptButton = aceptar;
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Sistema_Academia.Presentacion.Agregar
             title.Text = "AGREGAR MATERIA";
             aceptar.Text = "Agregar";
             aceptar.Click += aceptar_Click;
+            this.AcceptButton = aceptar;
         }
 
         public FormAgregarMateria(Materia materia) : this()
@@ -32,6 +33,7 @@ namespace Sistema_Academia.Presentacion.Agregar
             title.Text = "EDITAR MATERIA";
             aceptar.Text = "Actualizar";
             txtmateria.Text = materia.Nombre;
+            this.AcceptButton = aceptar;
         }
 
         private void aceptar_Click(object sender, EventArgs e)

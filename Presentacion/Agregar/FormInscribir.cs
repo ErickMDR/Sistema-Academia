@@ -27,7 +27,7 @@ namespace Sistema_Academia.Presentacion.Agregar
 
             this.Load += (s, e) => CargarCombos();
             aceptar.Click += aceptar_Click;
-            this.FormClosing += FormInscribir_FormClosing;
+            this.AcceptButton = aceptar;
             CargarCombos();
         }
 
@@ -85,14 +85,6 @@ namespace Sistema_Academia.Presentacion.Agregar
                 }
                 MessageBox.Show($"Error al inscribir: {mensaje}", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void FormInscribir_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (this.DialogResult != DialogResult.OK)
-            {
-                this.DialogResult = DialogResult.Cancel;
             }
         }
 

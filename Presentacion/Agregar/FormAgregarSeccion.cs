@@ -5,7 +5,6 @@ using System.Windows.Forms;
 
 namespace Sistema_Academia.Presentacion.Agregar
 {
-    
 
     public partial class FormAgregarSeccion : Form
     {
@@ -22,6 +21,7 @@ namespace Sistema_Academia.Presentacion.Agregar
             title.Text = "AGREGAR SECCIÓN";
             aceptar.Text = "Agregar";
             aceptar.Click += aceptar_Click;
+            this.AcceptButton = aceptar;
         }
 
         // Constructor para Editar
@@ -33,6 +33,7 @@ namespace Sistema_Academia.Presentacion.Agregar
             title.Text = "EDITAR SECCIÓN";
             aceptar.Text = "Actualizar";
             txtseccion.Text = seccion.Descripcion;
+            this.AcceptButton = aceptar;
         }
 
         private void aceptar_Click(object sender, EventArgs e)

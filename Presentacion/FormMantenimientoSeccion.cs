@@ -18,6 +18,7 @@ namespace Sistema_Academia.Presentacion
             editar.Click += editar_Click;
             eliminar.Click += eliminar_Click;
             buscar.Click += buscar_Click;
+            txtseccion.KeyDown += txtseccion_KeyDown;
 
             CargarDatosSecciones();
         }
@@ -155,6 +156,27 @@ namespace Sistema_Academia.Presentacion
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+        }
+        private void txtseccion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    e.SuppressKeyPress = true;
+                    e.Handled = true;
+
+                    buscar.Focus();
+                    buscar_Click(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al procesar búsqueda: {ex.Message}",
+                                  "Error",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error);
+                }
             }
         }
     }

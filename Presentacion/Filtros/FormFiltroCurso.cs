@@ -15,6 +15,7 @@ namespace Sistema_Academia.Presentacion.Filtros
         public FormFiltroCurso()
         {
             InitializeComponent();
+            this.AcceptButton = aceptar;
         }
 
         private void aceptar_Click(object sender, EventArgs e)

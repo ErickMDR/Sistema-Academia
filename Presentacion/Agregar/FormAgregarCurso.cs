@@ -25,6 +25,7 @@ namespace Sistema_Academia.Presentacion.Agregar
             CargarCombos();
             //btnBuscarProfesor.Click += BuscarProfesor_Click;
             aceptar.Click += Aceptar_Click;
+            this.AcceptButton = aceptar;
         }
 
         // Constructor para Editar
@@ -53,6 +54,8 @@ namespace Sistema_Academia.Presentacion.Agregar
             // Seleccionar materia y sección actuales
             cmbMateria.SelectedValue = curso.MateriaId;
             cmbSeccion.SelectedValue = curso.SeccionId;
+
+            this.AcceptButton = aceptar;
         }
 
         private void CargarCombos()

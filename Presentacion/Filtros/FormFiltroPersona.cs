@@ -17,6 +17,7 @@ namespace Sistema_Academia.Presentacion.Filtros
             InitializeComponent();
             _tablaPersona = new TablaPersona();
             PersonasFiltradas = new List<Persona>();
+            this.AcceptButton = aceptar;
         }
 
         private void filtro_Click(object sender, EventArgs e)
