@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             panel = new Panel();
-            txtseccion = new TextBox();
+            cmbtipopersona = new ComboBox();
             labelsec = new Label();
             labelmateria = new Label();
-            txtmateria = new TextBox();
             aceptar = new Button();
             labeltipopersona = new Label();
             title = new Label();
-            comboBox = new ComboBox();
+            cmbmateria = new ComboBox();
+            cmbseccion = new ComboBox();
             panel.SuspendLayout();
             SuspendLayout();
             // 
             // panel
             // 
             panel.BackColor = Color.FromArgb(13, 13, 13);
-            panel.Controls.Add(comboBox);
-            panel.Controls.Add(txtseccion);
+            panel.Controls.Add(cmbseccion);
+            panel.Controls.Add(cmbmateria);
+            panel.Controls.Add(cmbtipopersona);
             panel.Controls.Add(labelsec);
             panel.Controls.Add(labelmateria);
-            panel.Controls.Add(txtmateria);
             panel.Controls.Add(aceptar);
             panel.Controls.Add(labeltipopersona);
             panel.Controls.Add(title);
@@ -56,27 +56,23 @@
             panel.Size = new Size(482, 558);
             panel.TabIndex = 16;
             // 
-            // txtseccion
+            // cmbtipopersona
             // 
-            txtseccion.BackColor = Color.FromArgb(13, 13, 13);
-            txtseccion.CharacterCasing = CharacterCasing.Lower;
-            txtseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtseccion.ForeColor = Color.White;
-            txtseccion.Location = new Point(83, 211);
-            txtseccion.Margin = new Padding(20);
-            txtseccion.MaxLength = 1;
-            txtseccion.Name = "txtseccion";
-            txtseccion.PlaceholderText = "Ingrese sección";
-            txtseccion.ShortcutsEnabled = false;
-            txtseccion.Size = new Size(314, 37);
-            txtseccion.TabIndex = 17;
+            cmbtipopersona.BackColor = Color.FromArgb(13, 13, 13);
+            cmbtipopersona.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbtipopersona.ForeColor = SystemColors.Menu;
+            cmbtipopersona.FormattingEnabled = true;
+            cmbtipopersona.Location = new Point(81, 344);
+            cmbtipopersona.Name = "cmbtipopersona";
+            cmbtipopersona.Size = new Size(314, 38);
+            cmbtipopersona.TabIndex = 19;
             // 
             // labelsec
             // 
             labelsec.AutoSize = true;
             labelsec.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelsec.ForeColor = Color.White;
-            labelsec.Location = new Point(93, 179);
+            labelsec.Location = new Point(91, 208);
             labelsec.Name = "labelsec";
             labelsec.Size = new Size(92, 30);
             labelsec.TabIndex = 16;
@@ -87,26 +83,11 @@
             labelmateria.AutoSize = true;
             labelmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelmateria.ForeColor = Color.White;
-            labelmateria.Location = new Point(93, 97);
+            labelmateria.Location = new Point(91, 117);
             labelmateria.Name = "labelmateria";
             labelmateria.Size = new Size(92, 30);
             labelmateria.TabIndex = 15;
             labelmateria.Text = "Materia:";
-            // 
-            // txtmateria
-            // 
-            txtmateria.BackColor = Color.FromArgb(13, 13, 13);
-            txtmateria.CharacterCasing = CharacterCasing.Lower;
-            txtmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtmateria.ForeColor = Color.White;
-            txtmateria.Location = new Point(83, 130);
-            txtmateria.Margin = new Padding(20);
-            txtmateria.MaxLength = 50;
-            txtmateria.Name = "txtmateria";
-            txtmateria.PlaceholderText = "Ingrese materia";
-            txtmateria.ShortcutsEnabled = false;
-            txtmateria.Size = new Size(314, 37);
-            txtmateria.TabIndex = 14;
             // 
             // aceptar
             // 
@@ -115,7 +96,7 @@
             aceptar.FlatStyle = FlatStyle.Flat;
             aceptar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             aceptar.ForeColor = Color.Snow;
-            aceptar.Location = new Point(149, 446);
+            aceptar.Location = new Point(148, 434);
             aceptar.Name = "aceptar";
             aceptar.Size = new Size(190, 48);
             aceptar.TabIndex = 4;
@@ -127,7 +108,7 @@
             labeltipopersona.AutoSize = true;
             labeltipopersona.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labeltipopersona.ForeColor = Color.White;
-            labeltipopersona.Location = new Point(93, 291);
+            labeltipopersona.Location = new Point(91, 311);
             labeltipopersona.Name = "labeltipopersona";
             labeltipopersona.Size = new Size(143, 30);
             labeltipopersona.TabIndex = 10;
@@ -138,22 +119,33 @@
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = Color.White;
-            title.Location = new Point(181, 31);
+            title.Location = new Point(179, 51);
             title.Name = "title";
             title.Size = new Size(115, 36);
             title.TabIndex = 3;
             title.Text = "FILTROS";
             // 
-            // comboBox
+            // cmbmateria
             // 
-            comboBox.BackColor = Color.FromArgb(13, 13, 13);
-            comboBox.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox.ForeColor = SystemColors.Menu;
-            comboBox.FormattingEnabled = true;
-            comboBox.Location = new Point(83, 324);
-            comboBox.Name = "comboBox";
-            comboBox.Size = new Size(314, 38);
-            comboBox.TabIndex = 19;
+            cmbmateria.BackColor = Color.FromArgb(13, 13, 13);
+            cmbmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbmateria.ForeColor = SystemColors.Menu;
+            cmbmateria.FormattingEnabled = true;
+            cmbmateria.Location = new Point(81, 150);
+            cmbmateria.Name = "cmbmateria";
+            cmbmateria.Size = new Size(314, 38);
+            cmbmateria.TabIndex = 20;
+            // 
+            // cmbseccion
+            // 
+            cmbseccion.BackColor = Color.FromArgb(13, 13, 13);
+            cmbseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbseccion.ForeColor = SystemColors.Menu;
+            cmbseccion.FormattingEnabled = true;
+            cmbseccion.Location = new Point(81, 241);
+            cmbseccion.Name = "cmbseccion";
+            cmbseccion.Size = new Size(314, 38);
+            cmbseccion.TabIndex = 21;
             // 
             // FormFiltroPersona
             // 
@@ -177,10 +169,10 @@
         private Button aceptar;
         private Label labeltipopersona;
         private Label title;
-        private TextBox txtseccion;
         private Label labelsec;
         private Label labelmateria;
-        private TextBox txtmateria;
-        private ComboBox comboBox;
+        private ComboBox cmbtipopersona;
+        private ComboBox cmbseccion;
+        private ComboBox cmbmateria;
     }
 }
