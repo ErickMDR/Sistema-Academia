@@ -16,12 +16,12 @@ namespace Sistema_Academia.Presentacion
             WindowState = FormWindowState.Maximized;
 
             agregar.Click += agregar_Click;
+            editar.Click -= editar_Click_1;
             editar.Click += editar_Click_1;
             eliminar.Click += eliminar_Click;
             buscar.Click += buscar_Click_1;
 
             CargarDatosPersonas();
-            //AgregarHeaders();
         }
 
         private void CargarDatosPersonas()
@@ -30,6 +30,7 @@ namespace Sistema_Academia.Presentacion
             {
                 var dt = new TablaPersona().Listado();
                 dataGridViewTabla.DataSource = dt;
+                AgregarHeaders();
             }
             catch (Exception ex)
             {
@@ -40,11 +41,18 @@ namespace Sistema_Academia.Presentacion
 
         private void AgregarHeaders()
         {
-            var cols = dataGridViewTabla.Columns;
-            if (cols["persona_no"] != null) cols["persona_no"].HeaderText = "Nombre";
-            if (cols["persona_ap"] != null) cols["persona_ap"].HeaderText = "Apellido";
-            if (cols["persona_ci"] != null) cols["persona_ci"].HeaderText = "Cédula";
-            if (cols["tipo_persona_id"] != null) cols["tipo_persona_id"].HeaderText = "Tipo";
+            try
+            {
+                dataGridViewTabla.Columns[0].HeaderText = "Cédula";
+                dataGridViewTabla.Columns[1].HeaderText = "Nombre";
+                dataGridViewTabla.Columns[2].HeaderText = "Apellido";
+                dataGridViewTabla.Columns[3].HeaderText = "Tipo de Persona";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar nombres de columna: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void agregar_Click(object sender, EventArgs e)

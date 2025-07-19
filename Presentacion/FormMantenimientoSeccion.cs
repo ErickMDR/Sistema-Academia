@@ -20,7 +20,6 @@ namespace Sistema_Academia.Presentacion
             buscar.Click += buscar_Click;
 
             CargarDatosSecciones();
-            //AgregarHeaders();
         }
 
         private void CargarDatosSecciones()
@@ -29,6 +28,7 @@ namespace Sistema_Academia.Presentacion
             {
                 using var tabla = new TablaSeccion();
                 dataGridViewTabla.DataSource = tabla.Listado();
+                AgregarHeaders();
             }
             catch (Exception ex)
             {
@@ -49,11 +49,8 @@ namespace Sistema_Academia.Presentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    $"Error al configurar encabezados: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show($"Error al cargar nombres de columna: {ex.Message}",
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

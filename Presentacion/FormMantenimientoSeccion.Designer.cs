@@ -74,7 +74,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(660, 29);
+            pictureBox1.Location = new Point(648, 29);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(22, 23);
             pictureBox1.TabIndex = 9;
@@ -88,9 +88,9 @@
             editar.FlatStyle = FlatStyle.Flat;
             editar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             editar.ForeColor = Color.Snow;
-            editar.Location = new Point(685, 19);
+            editar.Location = new Point(673, 19);
             editar.Name = "editar";
-            editar.Size = new Size(84, 40);
+            editar.Size = new Size(81, 40);
             editar.TabIndex = 8;
             editar.Text = "Editar";
             editar.TextAlign = ContentAlignment.MiddleLeft;

@@ -20,8 +20,6 @@ namespace Sistema_Academia.Presentacion
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             CargarDatosNotas();
-            dataGridViewTabla.Columns[0].HeaderText = "ID";
-            dataGridViewTabla.Columns[1].HeaderText = "Materia";
         }
 
         private void asignar_Click(object sender, EventArgs e)
@@ -38,11 +36,29 @@ namespace Sistema_Academia.Presentacion
                 {
                     dataGridViewTabla.DataSource = tablaNotas.Listado();
                 }
+                AgregarHeaders();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al cargar datos: {ex.Message}", "Error",
                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AgregarHeaders()
+        {
+            try
+            {
+                dataGridViewTabla.Columns["persona_ci"].HeaderText = "Cédula";
+                dataGridViewTabla.Columns["persona_no"].HeaderText = "Nombre";
+                dataGridViewTabla.Columns["persona_ap"].HeaderText = "Apellido";
+                dataGridViewTabla.Columns["materia_de"].HeaderText = "Materia";
+                dataGridViewTabla.Columns["calificacion_nu"].HeaderText = "Nota";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar nombres de columna: {ex.Message}",
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

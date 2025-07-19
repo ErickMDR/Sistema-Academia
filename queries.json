@@ -20,7 +20,7 @@
   "Persona": {
     "BuscarCi": "SELECT persona_id, persona_no, persona_ap, persona_ci, tipo_persona_id FROM persona WHERE persona_ci = @ci;",
     "Crear": "INSERT INTO persona (persona_no, persona_ap, persona_ci, tipo_persona_id) VALUES (@nombre, @apellido, @ci, @tipoPersona);",
-    "Leer": "SELECT p.persona_no, p.persona_ap, p.persona_ci, tp.tipo_persona_de FROM persona p JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id;",
+    "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, tp.tipo_persona_de FROM persona p JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id;",
     "Eliminar": "DELETE FROM persona WHERE persona_no = @nombre AND persona_ap = @apellido",
     "Actualizar": "UPDATE persona SET persona_no = @nombre, persona_ap = @apellido, persona_ci = @ci, tipo_persona_id = @tipoPersona WHERE persona_id = @personaId;",
     "FiltroMateria": "SELECT DISTINCT p.* FROM persona p JOIN curso c ON p.persona_id = c.persona_id JOIN materia m ON c.materia_id = m.materia_id WHERE m.materia_de = @materia;",

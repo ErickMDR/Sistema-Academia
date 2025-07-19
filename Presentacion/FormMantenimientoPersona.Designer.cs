@@ -98,10 +98,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(738, 28);
+            pictureBox2.Location = new Point(736, 27);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(31, 23);
-            pictureBox2.TabIndex = 11;
+            pictureBox2.Size = new Size(24, 23);
+            pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
             // picfiltro
@@ -122,7 +122,7 @@
             editar.FlatStyle = FlatStyle.Flat;
             editar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             editar.ForeColor = Color.Snow;
-            editar.Location = new Point(762, 19);
+            editar.Location = new Point(761, 19);
             editar.Name = "editar";
             editar.Size = new Size(79, 40);
             editar.TabIndex = 10;
@@ -320,7 +320,7 @@
         private PictureBox picinscribir;
         private PictureBox buscar;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private Button editar;
+        private PictureBox pictureBox2;
     }
 }

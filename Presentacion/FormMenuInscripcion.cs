@@ -17,7 +17,6 @@ namespace Sistema_Academia.Presentacion
 
             WindowState = FormWindowState.Maximized;
             CargarDatosInscritos();
-            //AgregarHeaders();
         }
   
         private void CargarDatosInscritos()

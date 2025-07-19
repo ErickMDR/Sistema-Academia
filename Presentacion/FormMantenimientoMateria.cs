@@ -14,14 +14,12 @@ namespace Sistema_Academia.Presentacion
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
 
-            // Suscribir eventos
             agregar.Click += agregar_Click;
             editar.Click += editar_Click;
             eliminar.Click += eliminar_Click;
             buscar.Click += buscar_Click_1;
 
             CargarDatosMaterias();
-            AgregarHeaders();
         }
 
         private void CargarDatosMaterias()
@@ -30,6 +28,7 @@ namespace Sistema_Academia.Presentacion
             {
                 using var tabla = new TablaMateria();
                 dataGridViewTabla.DataSource = tabla.Listado();
+                AgregarHeaders();
             }
             catch (Exception ex)
             {

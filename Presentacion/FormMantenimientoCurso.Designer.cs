@@ -84,10 +84,10 @@ namespace Sistema_Academia.Presentacion
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(736, 28);
+            pictureBox2.Location = new Point(736, 27);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(31, 23);
-            pictureBox2.TabIndex = 11;
+            pictureBox2.Size = new Size(24, 23);
+            pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
             // picfiltro
@@ -108,7 +108,7 @@ namespace Sistema_Academia.Presentacion
             editar.FlatStyle = FlatStyle.Flat;
             editar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             editar.ForeColor = Color.Snow;
-            editar.Location = new Point(760, 19);
+            editar.Location = new Point(761, 19);
             editar.Name = "editar";
             editar.Size = new Size(79, 40);
             editar.TabIndex = 10;
@@ -320,7 +320,7 @@ namespace Sistema_Academia.Presentacion
         private Panel panel;
         public DataGridView dataGridViewTabla;
         private Label title;
-        private PictureBox pictureBox2;
         private Button editar;
+        private PictureBox pictureBox2;
     }
 }
