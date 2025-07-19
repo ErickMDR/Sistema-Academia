@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             panel = new Panel();
-            txtseccion = new TextBox();
             aceptar = new Button();
             labelnota = new Label();
             txtcedula = new TextBox();
             labelci = new Label();
             labelmateria = new Label();
             asignar = new Label();
-            txtmateria = new TextBox();
             txtapellido = new TextBox();
             labelna = new Label();
             labelap = new Label();
             txtnombre = new TextBox();
+            cmbseccion = new ComboBox();
+            cmbmateria = new ComboBox();
             panel.SuspendLayout();
             SuspendLayout();
             // 
             // panel
             // 
-            panel.Controls.Add(txtseccion);
+            panel.Controls.Add(cmbseccion);
+            panel.Controls.Add(cmbmateria);
             panel.Controls.Add(aceptar);
             panel.Controls.Add(labelnota);
             panel.Controls.Add(txtcedula);
             panel.Controls.Add(labelci);
             panel.Controls.Add(labelmateria);
             panel.Controls.Add(asignar);
-            panel.Controls.Add(txtmateria);
             panel.Controls.Add(txtapellido);
             panel.Controls.Add(labelna);
             panel.Controls.Add(labelap);
@@ -62,21 +62,6 @@
             panel.Name = "panel";
             panel.Size = new Size(482, 655);
             panel.TabIndex = 15;
-            // 
-            // txtseccion
-            // 
-            txtseccion.BackColor = Color.FromArgb(13, 13, 13);
-            txtseccion.CharacterCasing = CharacterCasing.Upper;
-            txtseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtseccion.ForeColor = Color.White;
-            txtseccion.Location = new Point(83, 485);
-            txtseccion.Margin = new Padding(20);
-            txtseccion.MaxLength = 2;
-            txtseccion.Name = "txtseccion";
-            txtseccion.PlaceholderText = "Ingrese seccion";
-            txtseccion.ShortcutsEnabled = false;
-            txtseccion.Size = new Size(314, 37);
-            txtseccion.TabIndex = 13;
             // 
             // aceptar
             // 
@@ -151,20 +136,6 @@
             asignar.TabIndex = 3;
             asignar.Text = "INSCRIBIR";
             // 
-            // txtmateria
-            // 
-            txtmateria.BackColor = Color.FromArgb(13, 13, 13);
-            txtmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtmateria.ForeColor = Color.White;
-            txtmateria.Location = new Point(83, 404);
-            txtmateria.Margin = new Padding(20);
-            txtmateria.MaxLength = 50;
-            txtmateria.Name = "txtmateria";
-            txtmateria.PlaceholderText = "Ingrese materia";
-            txtmateria.ShortcutsEnabled = false;
-            txtmateria.Size = new Size(314, 37);
-            txtmateria.TabIndex = 9;
-            // 
             // txtapellido
             // 
             txtapellido.BackColor = Color.FromArgb(13, 13, 13);
@@ -215,6 +186,28 @@
             txtnombre.Size = new Size(314, 37);
             txtnombre.TabIndex = 7;
             // 
+            // cmbseccion
+            // 
+            cmbseccion.BackColor = Color.FromArgb(13, 13, 13);
+            cmbseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbseccion.ForeColor = SystemColors.Menu;
+            cmbseccion.FormattingEnabled = true;
+            cmbseccion.Location = new Point(83, 486);
+            cmbseccion.Name = "cmbseccion";
+            cmbseccion.Size = new Size(314, 38);
+            cmbseccion.TabIndex = 29;
+            // 
+            // cmbmateria
+            // 
+            cmbmateria.BackColor = Color.FromArgb(13, 13, 13);
+            cmbmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbmateria.ForeColor = SystemColors.Menu;
+            cmbmateria.FormattingEnabled = true;
+            cmbmateria.Location = new Point(83, 404);
+            cmbmateria.Name = "cmbmateria";
+            cmbmateria.Size = new Size(314, 38);
+            cmbmateria.TabIndex = 28;
+            // 
             // FormInscribir
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
@@ -233,17 +226,17 @@
         #endregion
 
         private Panel panel;
-        private TextBox txtseccion;
         private Button aceptar;
         private Label labelnota;
         private TextBox txtcedula;
         private Label labelci;
         private Label labelmateria;
         private Label asignar;
-        private TextBox txtmateria;
         private TextBox txtapellido;
         private Label labelna;
         private Label labelap;
         private TextBox txtnombre;
+        private ComboBox cmbseccion;
+        private ComboBox cmbmateria;
     }
 }

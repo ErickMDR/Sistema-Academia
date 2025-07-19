@@ -1,14 +1,14 @@
 {
   "Inscripcion": {
-    "Leer": "SELECT p.persona_ci AS Cedula, p.persona_no AS Nombre, p.persona_ap AS Apellido, m.materia_de AS Materia, s.seccion_de AS Seccion FROM inscripcion i JOIN persona p ON i.persona_id = p.persona_id JOIN curso c ON i.curso_id = c.curso_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id ORDER BY i.inscripcion_id DESC LIMIT 15;",
+    "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de FROM inscripcion i JOIN persona p ON i.persona_id = p.persona_id JOIN curso c ON i.curso_id = c.curso_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id ORDER BY i.inscripcion_id DESC LIMIT 15;",
     "InsertarPersona": "INSERT INTO persona (persona_no, persona_ap, persona_ci, tipo_persona_id) VALUES (@nombre, @apellido, @cedula, 2) RETURNING persona_id;",
-    "ObtenerCurso": "SELECT c.curso_id FROM curso c JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_idWHERE m.materia_de = @materia AND s.seccion_de = @seccion;",
+    "ObtenerCurso": "SELECT c.curso_id FROM curso c JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id WHERE m.materia_de = @materia AND s.seccion_de = @seccion LIMIT 1;",
     "ObtenerPersona": "SELECT persona_id FROM persona WHERE persona_ci = @cedula;",
     "Inscribir": "INSERT INTO inscripcion (persona_id, curso_id) VALUES (@personaId, @cursoId);"
   },
 
   "Notas": {
-    "Leer": "SELECT p.persona_ci AS cedula, p.persona_no AS nombre, p.persona_ap AS apellido, m.materia_de AS materia, c.calificacion_nu AS nota FROM calificacion c JOIN inscripcion i ON c.inscripcion_id = i.inscripcion_id JOIN persona p ON i.persona_id = p.persona_id JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id JOIN curso cu ON i.curso_id = cu.curso_id JOIN materia m ON cu.materia_id = m.materia_id ORDER BY p.persona_ap, p.persona_no, m.materia_de;",
+    "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, c.calificacion_nu FROM calificacion c JOIN inscripcion i ON c.inscripcion_id = i.inscripcion_id JOIN persona p ON i.persona_id = p.persona_id JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id JOIN curso cu ON i.curso_id = cu.curso_id JOIN materia m ON cu.materia_id = m.materia_id ORDER BY p.persona_ap, p.persona_no, m.materia_de;",
     "Asignar": "INSERT INTO calificacion (calificacion_nu, inscripcion_id) VALUES (@nota, @inscripcionId);"
   },
 
@@ -30,9 +30,9 @@
   },
 
   "Curso": {
-    "Buscar": "SELECT p.persona_ci AS Cedula, p.persona_no AS Nombre, p.persona_ap AS Apellido, m.materia_de AS Materia, s.seccion_de AS Seccion FROM curso c JOIN persona p ON c.persona_id = p.persona_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id WHERE p.persona_ci = @cedulaProfesor AND p.tipo_persona_id = 1;",
+    "Buscar": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de FROM curso c JOIN persona p ON c.persona_id = p.persona_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id WHERE p.persona_ci = @cedulaProfesor AND p.tipo_persona_id = 1;",
     "Crear": "INSERT INTO curso (persona_id, materia_id, seccion_id) VALUES (@personaId, @materiaId, @seccionId);",
-    "Leer": "SELECT p.persona_ci AS cedula, p.persona_no AS nombre, p.persona_ap AS apellido, m.materia_de AS materia, s.seccion_de AS seccion FROM curso c JOIN persona p ON c.persona_id = p.persona_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id ORDER BY p.persona_ap, p.persona_no, m.materia_de;",
+    "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de FROM curso c JOIN persona p ON c.persona_id = p.persona_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id ORDER BY p.persona_ap, p.persona_no, m.materia_de;",
     "Eliminar": "DELETE FROM curso WHERE curso_id = @cursoId;",
     "Actualizar": "UPDATE curso SET persona_id = @personaId, materia_id = @materiaId, seccion_id = @seccionId WHERE curso_id = @cursoId;",
     "FiltroMateria": "SELECT c.curso_id, c.persona_id, c.materia_id, c.seccion_id FROM curso c JOIN materia m ON c.materia_id = m.materia_id WHERE m.materia_de = @materia;",
