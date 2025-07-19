@@ -18,7 +18,7 @@ namespace Sistema_Academia.Presentacion.Agregar
         {
             InitializeComponent();
             _modo = FormMode.Agregar;
-            Text = "Agregar Persona";
+            title.Text = "AGREGAR PERSONA";
             aceptar.Text = "Agregar";
             CargarTiposPersona();
             aceptar.Click += aceptar_Click_1;
@@ -30,7 +30,7 @@ namespace Sistema_Academia.Presentacion.Agregar
 
             _modo = FormMode.Editar;
             _personaExistente = persona;
-            Text = "Editar Persona";
+            title.Text = "EDITAR PERSONA";
             aceptar.Text = "Actualizar";
 
             txtnombre.Text = persona.Nombre;

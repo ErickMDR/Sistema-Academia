@@ -85,7 +85,7 @@
             aceptar.FlatStyle = FlatStyle.Flat;
             aceptar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             aceptar.ForeColor = Color.Snow;
-            aceptar.Location = new Point(149, 571);
+            aceptar.Location = new Point(149, 564);
             aceptar.Name = "aceptar";
             aceptar.Size = new Size(190, 48);
             aceptar.TabIndex = 4;

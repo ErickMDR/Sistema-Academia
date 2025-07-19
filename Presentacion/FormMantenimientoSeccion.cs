@@ -20,7 +20,7 @@ namespace Sistema_Academia.Presentacion
             buscar.Click += buscar_Click;
 
             CargarDatosSecciones();
-            AgregarHeaders();
+            //AgregarHeaders();
         }
 
         private void CargarDatosSecciones()

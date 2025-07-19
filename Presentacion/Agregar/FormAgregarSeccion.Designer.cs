@@ -62,11 +62,12 @@
             // txtseccion
             // 
             txtseccion.BackColor = Color.FromArgb(13, 13, 13);
+            txtseccion.CharacterCasing = CharacterCasing.Upper;
             txtseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtseccion.ForeColor = Color.White;
             txtseccion.Location = new Point(84, 163);
             txtseccion.Margin = new Padding(20);
-            txtseccion.MaxLength = 30;
+            txtseccion.MaxLength = 1;
             txtseccion.Name = "txtseccion";
             txtseccion.PlaceholderText = "Ingrese sección";
             txtseccion.ShortcutsEnabled = false;
@@ -97,6 +98,7 @@
             title.Size = new Size(236, 36);
             title.TabIndex = 14;
             title.Text = "AGREGAR/EDITAR";
+            title.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormAgregarSeccion
             // 

@@ -14,31 +14,28 @@ namespace Sistema_Academia.Presentacion.Agregar
 
         public bool MateriaAgregada { get; private set; } = false;
 
-        // Constructor para Agregar
         public FormAgregarMateria()
         {
             InitializeComponent();
             _modo = FormMode.Agregar;
-            Text = "Agregar Materia";
+            title.Text = "AGREGAR MATERIA";
             aceptar.Text = "Agregar";
             aceptar.Click += aceptar_Click;
         }
 
-        // Constructor para Editar
         public FormAgregarMateria(Materia materia) : this()
         {
             if (materia == null) throw new ArgumentNullException(nameof(materia));
 
             _modo = FormMode.Editar;
             _materiaExistente = materia;
-            Text = "Editar Materia";
+            title.Text = "EDITAR MATERIA";
             aceptar.Text = "Actualizar";
             txtmateria.Text = materia.Nombre;
         }
 
         private void aceptar_Click(object sender, EventArgs e)
         {
-            // Leemos siempre del TextBox, nunca del botón
             string nombre = txtmateria.Text.Trim();
             if (string.IsNullOrEmpty(nombre))
             {

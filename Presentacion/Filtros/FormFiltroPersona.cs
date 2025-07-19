@@ -26,8 +26,8 @@ namespace Sistema_Academia.Presentacion.Filtros
                // string nombre = txtnombre.Text.Trim();
                 //string apellido = txtapellido.Text.Trim();
                 //string cedula = txtcedula.Text.Trim();
-                string materia = txtmateria.Text.Trim();
-                string seccion = txtseccion.Text.Trim();
+                //string materia = txtmateria.Text.Trim();
+                //string seccion = txtseccion.Text.Trim();
 
                 Dictionary<string, object> parametros = new Dictionary<string, object>();
                 List<string> condiciones = new List<string>();
@@ -48,7 +48,7 @@ namespace Sistema_Academia.Presentacion.Filtros
                 {
                     parametros.Add("@ci", cedula);
                     condiciones.Add("p.persona_ci = @ci");
-                }*/
+                }
 
                 if (!string.IsNullOrEmpty(materia))
                 {
@@ -60,7 +60,7 @@ namespace Sistema_Academia.Presentacion.Filtros
                 {
                     parametros.Add("@seccion", $"%{seccion}%");
                     condiciones.Add("p.persona_id IN (SELECT DISTINCT c.persona_id FROM curso c JOIN seccion s ON c.seccion_id = s.seccion_id WHERE s.seccion_de LIKE @seccion)");
-                }
+                }*/
 
                 string whereClause = condiciones.Count > 0 ? "WHERE " + string.Join(" AND ", condiciones) : "";
 

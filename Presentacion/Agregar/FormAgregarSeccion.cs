@@ -19,7 +19,7 @@ namespace Sistema_Academia.Presentacion.Agregar
         {
             InitializeComponent();
             _modo = FormMode.Agregar;
-            Text = "Agregar Sección";
+            title.Text = "AGREGAR SECCIÓN";
             aceptar.Text = "Agregar";
             aceptar.Click += aceptar_Click;
         }
@@ -30,7 +30,7 @@ namespace Sistema_Academia.Presentacion.Agregar
             if (seccion == null) throw new ArgumentNullException(nameof(seccion));
             _modo = FormMode.Editar;
             _seccionExistente = seccion;
-            Text = "Editar Sección";
+            title.Text = "EDITAR SECCIÓN";
             aceptar.Text = "Actualizar";
             txtseccion.Text = seccion.Descripcion;
         }

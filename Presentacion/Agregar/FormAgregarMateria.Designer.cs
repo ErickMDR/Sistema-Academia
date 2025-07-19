@@ -66,7 +66,7 @@
             txtmateria.ForeColor = Color.White;
             txtmateria.Location = new Point(84, 159);
             txtmateria.Margin = new Padding(20);
-            txtmateria.MaxLength = 30;
+            txtmateria.MaxLength = 50;
             txtmateria.Name = "txtmateria";
             txtmateria.PlaceholderText = "Ingrese materia";
             txtmateria.ShortcutsEnabled = false;

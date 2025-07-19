@@ -19,7 +19,7 @@ namespace Sistema_Academia.Presentacion.Agregar
         {
             InitializeComponent();
             _modo = FormMode.Agregar;
-            Text = "Agregar Curso";
+            title.Text = "AGREGAR CURSO";
             aceptar.Text = "Agregar";
 
             CargarCombos();
@@ -34,7 +34,7 @@ namespace Sistema_Academia.Presentacion.Agregar
 
             _modo = FormMode.Editar;
             _cursoExistente = curso;
-            Text = "Editar Curso";
+            title.Text = "EDITAR CURSO";
             aceptar.Text = "Actualizar";
 
             // Bloquear búsqueda de profesor
