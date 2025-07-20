@@ -7,7 +7,7 @@
   },
 
   "Notas": {
-    "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de FROM persona p JOIN inscripcion i ON p.persona_id = i.persona_id JOIN curso c ON i.curso_id = c.curso_id JOIN materia m ON c.materia_id = m.materia_id LEFT JOIN calificacion cal ON i.inscripcion_id = cal.inscripcion_id WHERE cal.calificacion_id IS NULL ORDER BY p.persona_ci;",
+    "Leer": "SELECT i.inscripcion_id, p.persona_ci, p.persona_no, p.persona_ap, m.materia_de FROM persona p JOIN inscripcion i ON p.persona_id = i.persona_id JOIN curso c ON i.curso_id = c.curso_id JOIN materia m ON c.materia_id = m.materia_id LEFT JOIN calificacion cal ON i.inscripcion_id = cal.inscripcion_id WHERE cal.calificacion_id IS NULL ORDER BY p.persona_ci;",
     "Asignar": "INSERT INTO calificacion (calificacion_nu, inscripcion_id) VALUES (@nota, @inscripcionId);"
   },
 

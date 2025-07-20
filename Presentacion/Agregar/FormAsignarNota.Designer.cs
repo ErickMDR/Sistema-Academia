@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             txtnota = new TextBox();
-            aceptar = new Button();
+            asignarNota = new Button();
             labelnota = new Label();
             txtcedula = new TextBox();
             labelci = new Label();
@@ -57,19 +57,20 @@
             txtnota.Size = new Size(314, 37);
             txtnota.TabIndex = 25;
             // 
-            // aceptar
+            // asignarNota
             // 
-            aceptar.FlatAppearance.BorderColor = Color.White;
-            aceptar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
-            aceptar.FlatStyle = FlatStyle.Flat;
-            aceptar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            aceptar.ForeColor = Color.Snow;
-            aceptar.Location = new Point(150, 570);
-            aceptar.Name = "aceptar";
-            aceptar.Size = new Size(190, 48);
-            aceptar.TabIndex = 17;
-            aceptar.Text = "Aceptar";
-            aceptar.UseVisualStyleBackColor = true;
+            asignarNota.FlatAppearance.BorderColor = Color.White;
+            asignarNota.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
+            asignarNota.FlatStyle = FlatStyle.Flat;
+            asignarNota.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            asignarNota.ForeColor = Color.Snow;
+            asignarNota.Location = new Point(150, 570);
+            asignarNota.Name = "asignarNota";
+            asignarNota.Size = new Size(190, 48);
+            asignarNota.TabIndex = 17;
+            asignarNota.Text = "Asignar";
+            asignarNota.UseVisualStyleBackColor = true;
+            asignarNota.Click += asignarNota_Click_1;
             // 
             // labelnota
             // 
@@ -197,7 +198,7 @@
             BackColor = Color.FromArgb(13, 13, 13);
             ClientSize = new Size(482, 655);
             Controls.Add(txtnota);
-            Controls.Add(aceptar);
+            Controls.Add(asignarNota);
             Controls.Add(labelnota);
             Controls.Add(txtcedula);
             Controls.Add(labelci);
@@ -218,7 +219,7 @@
         #endregion
 
         private TextBox txtnota;
-        private Button aceptar;
+        private Button asignarNota;
         private Label labelnota;
         private TextBox txtcedula;
         private Label labelci;

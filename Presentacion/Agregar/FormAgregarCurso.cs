@@ -14,7 +14,6 @@ namespace Sistema_Academia.Presentacion.Agregar
 
         public bool CursoAgregado { get; private set; }
 
-        // Constructor para Agregar
         public FormAgregarCurso()
         {
             InitializeComponent();
@@ -23,12 +22,10 @@ namespace Sistema_Academia.Presentacion.Agregar
             aceptar.Text = "Agregar";
 
             CargarCombos();
-            //btnBuscarProfesor.Click += BuscarProfesor_Click;
             aceptar.Click += Aceptar_Click;
             this.AcceptButton = aceptar;
         }
 
-        // Constructor para Editar
         public FormAgregarCurso(Curso curso) : this()
         {
             if (curso == null) throw new ArgumentNullException(nameof(curso));
@@ -38,11 +35,8 @@ namespace Sistema_Academia.Presentacion.Agregar
             title.Text = "EDITAR CURSO";
             aceptar.Text = "Actualizar";
 
-            // Bloquear búsqueda de profesor
             txtcedula.Enabled = false;
-            //btnBuscarProfesor.Enabled = false;
 
-            // Cargar datos del profesor
             var prof = new TablaPersona().BuscarPorCedula(curso.ProfesorId);
             if (prof != null)
             {
@@ -51,7 +45,6 @@ namespace Sistema_Academia.Presentacion.Agregar
                 txtapellido.Text = prof.Apellido;
             }
 
-            // Seleccionar materia y sección actuales
             cmbMateria.SelectedValue = curso.MateriaId;
             cmbSeccion.SelectedValue = curso.SeccionId;
 

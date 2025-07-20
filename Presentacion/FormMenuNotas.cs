@@ -1,4 +1,5 @@
 ﻿using Sistema_Academia.Datos;
+using Sistema_Academia.Entidades;
 using Sistema_Academia.Presentacion;
 using Sistema_Academia.Presentacion.Agregar;
 using System;
@@ -28,9 +29,25 @@ namespace Sistema_Academia.Presentacion
 
         private void asignar_Click(object sender, EventArgs e)
         {
-            Debug.WriteLine($"Evento click llamado desde: {new System.Diagnostics.StackTrace()}");
-            using var form = new FormInscribir();
-            if (form.ShowDialog(this) == DialogResult.OK && form.InscripcionExitosa)
+            if (dataGridViewTabla.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Seleccione un estudiante para asignar nota",
+                              "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var selectedRow = dataGridViewTabla.SelectedRows[0];
+            var nota = new Nota
+            {
+                Cedula = selectedRow.Cells["persona_ci"].Value.ToString(),
+                Nombre = selectedRow.Cells["persona_no"].Value.ToString(),
+                Apellido = selectedRow.Cells["persona_ap"].Value.ToString(),
+                Materia = selectedRow.Cells["materia_de"].Value.ToString(),
+                InscripcionId = Convert.ToInt32(selectedRow.Cells["inscripcion_id"].Value)
+            };
+
+            using var form = new FormAsignarNota(nota);
+            if (form.ShowDialog(this) == DialogResult.OK && form.Calificado)
             {
                 CargarDatosNotas();
             }
@@ -57,10 +74,11 @@ namespace Sistema_Academia.Presentacion
         {
             try
             {
-                dataGridViewTabla.Columns[0].HeaderText = "Cédula";
-                dataGridViewTabla.Columns[1].HeaderText = "Nombre";
-                dataGridViewTabla.Columns[2].HeaderText = "Apellido";
-                dataGridViewTabla.Columns[3].HeaderText = "Materia";
+                dataGridViewTabla.Columns["inscripcion_id"].Visible = false;
+                dataGridViewTabla.Columns[1].HeaderText = "Cédula";
+                dataGridViewTabla.Columns[2].HeaderText = "Nombre";
+                dataGridViewTabla.Columns[3].HeaderText = "Apellido";
+                dataGridViewTabla.Columns[4].HeaderText = "Materia";
             }
             catch (Exception ex)
             {

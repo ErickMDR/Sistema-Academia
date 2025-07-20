@@ -62,7 +62,7 @@ namespace Sistema_Academia.Presentacion.Agregar
                 };
 
                 using var tabla = new TablaInscripcion();
-                tabla.InsertarCompleto(inscripcion);
+                tabla.Insertar(inscripcion);
 
                 InscripcionExitosa = true;
                 MessageBox.Show("Inscripción realizada con éxito", "Éxito",
@@ -152,10 +152,8 @@ namespace Sistema_Academia.Presentacion.Agregar
             {
                 var secciones = new TablaSeccion().ObtenerSeccionesPorMateria(materiaId);
 
-                // Verificar que las columnas esperadas existan
                 if (secciones.Columns.Contains("seccion_id") && secciones.Columns.Contains("seccion_de"))
                 {
-                    // Crear una copia para evitar problemas de referencia
                     var seccionesCopia = secciones.Clone();
                     foreach (DataRow row in secciones.Rows)
                     {

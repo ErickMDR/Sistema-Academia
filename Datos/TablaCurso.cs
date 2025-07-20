@@ -21,7 +21,6 @@ namespace Sistema_Academia.Datos
                 .Build();
         }
 
-        // Listado completo usando la view vw_cursos
         public DataTable Listado()
         {
             var dt = new DataTable();
@@ -33,7 +32,6 @@ namespace Sistema_Academia.Datos
             return dt;
         }
 
-        // Búsqueda por cédula de profesor
         public DataTable BuscarCursosPorCedulaProfesor(int cedulaProfesor)
         {
             var dt = new DataTable();
@@ -78,7 +76,6 @@ namespace Sistema_Academia.Datos
             cmd.ExecuteNonQuery();
         }
 
-        // Obtenemos el curso_id dado materia y sección
         public int ObtenerCursoId(int materiaId, int seccionId)
         {
             var query = _config["Curso:BuscarPorMateriaSeccion"];

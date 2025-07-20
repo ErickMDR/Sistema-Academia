@@ -13,7 +13,6 @@ namespace Sistema_Academia.Presentacion.Agregar
 
         public bool SeccionAgregada { get; private set; } = false;
 
-        // Constructor para Agregar
         public FormAgregarSeccion()
         {
             InitializeComponent();
@@ -24,7 +23,6 @@ namespace Sistema_Academia.Presentacion.Agregar
             this.AcceptButton = aceptar;
         }
 
-        // Constructor para Editar
         public FormAgregarSeccion(Seccion seccion) : this()
         {
             if (seccion == null) throw new ArgumentNullException(nameof(seccion));

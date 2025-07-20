@@ -9,7 +9,6 @@ namespace Sistema_Academia.Datos
 {
     public class TablaInscripcion : TablaBase<TablaInscripcion>, IDisposable
     {
-
         protected override string NombreTabla => "Inscripcion";
         private readonly IConfigurationRoot _config;
 
@@ -22,18 +21,7 @@ namespace Sistema_Academia.Datos
         }
         public void Insertar(Inscripcion inscripcion)
         {
-            var query = _config["Inscripcion:Inscribir"];
             using var m = new ManejadorConexion(new Conexion());
-            using var cmd = new NpgsqlCommand(query, m.ConexionAbierta);
-            cmd.Parameters.AddWithValue("@personaId", inscripcion.PersonaId);
-            cmd.Parameters.AddWithValue("@cursoId", inscripcion.CursoId);
-            cmd.ExecuteNonQuery();
-        }
-
-        public void InsertarCompleto(Inscripcion inscripcion)
-        {
-            using var m = new ManejadorConexion(new Conexion());
-
             var personaId = ObtenerPersonaId(inscripcion.Cedula, m.ConexionAbierta);
             var cursoId = ObtenerCursoId(inscripcion.Materia, inscripcion.Seccion, m.ConexionAbierta);
 
@@ -46,11 +34,10 @@ namespace Sistema_Academia.Datos
             {
                 throw new Exception($"No se encontró un curso válido para {inscripcion.Materia} - {inscripcion.Seccion}");
             }
-
             var query = _config["Inscripcion:Inscribir"];
             using var cmd = new NpgsqlCommand(query, m.ConexionAbierta);
-            cmd.Parameters.AddWithValue("@personaId", personaId);
-            cmd.Parameters.AddWithValue("@cursoId", cursoId);
+            cmd.Parameters.AddWithValue("@personaId", inscripcion.PersonaId);
+            cmd.Parameters.AddWithValue("@cursoId", inscripcion.CursoId);
             cmd.ExecuteNonQuery();
         }
 
