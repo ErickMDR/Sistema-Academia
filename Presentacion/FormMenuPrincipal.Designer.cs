@@ -39,6 +39,7 @@
             PlataformaVirtual = new Label();
             Academia = new Label();
             Imagen = new PictureBox();
+            toolStripComboBox1 = new ToolStripComboBox();
             menuStrip1.SuspendLayout();
             panelBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Imagen).BeginInit();
@@ -52,10 +53,10 @@
             menuStrip1.Font = new Font("Segoe UI", 15.7652178F);
             menuStrip1.ImageScalingSize = new Size(36, 36);
             menuStrip1.Items.AddRange(new ToolStripItem[] { inscripcionToolStripMenuItem, notasToolStripMenuItem, reportesToolStripMenuItem, mantenimientoToolStripMenuItem });
-            menuStrip1.Location = new Point(1085, 54);
+            menuStrip1.Location = new Point(1229, 54);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(3, 1, 0, 1);
-            menuStrip1.Size = new Size(792, 46);
+            menuStrip1.Size = new Size(648, 46);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -187,6 +188,11 @@
             Imagen.TabIndex = 1;
             Imagen.TabStop = false;
             // 
+            // toolStripComboBox1
+            // 
+            toolStripComboBox1.Name = "toolStripComboBox1";
+            toolStripComboBox1.Size = new Size(121, 44);
+            // 
             // FormMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
@@ -226,5 +232,6 @@
         private ToolStripMenuItem materiasToolStripMenuItem;
         private ToolStripMenuItem seccionesToolStripMenuItem;
         private ToolStripMenuItem planillaDeNotasToolStripMenuItem1;
+        private ToolStripComboBox toolStripComboBox1;
     }
 }

@@ -31,9 +31,9 @@ namespace Sistema_Academia.Presentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMantenimientoCurso));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelInfo = new Panel();
             pictureBox2 = new PictureBox();
             picfiltro = new PictureBox();
@@ -84,10 +84,10 @@ namespace Sistema_Academia.Presentacion
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(736, 28);
+            pictureBox2.Location = new Point(736, 27);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(31, 23);
-            pictureBox2.TabIndex = 11;
+            pictureBox2.Size = new Size(24, 23);
+            pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
             // picfiltro
@@ -103,12 +103,13 @@ namespace Sistema_Academia.Presentacion
             // editar
             // 
             editar.BackColor = Color.FromArgb(22, 18, 30);
+            editar.Cursor = Cursors.Hand;
             editar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             editar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             editar.FlatStyle = FlatStyle.Flat;
             editar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             editar.ForeColor = Color.Snow;
-            editar.Location = new Point(760, 19);
+            editar.Location = new Point(761, 19);
             editar.Name = "editar";
             editar.Size = new Size(79, 40);
             editar.TabIndex = 10;
@@ -118,6 +119,7 @@ namespace Sistema_Academia.Presentacion
             // 
             // buscar
             // 
+            buscar.Cursor = Cursors.Hand;
             buscar.Image = (Image)resources.GetObject("buscar.Image");
             buscar.Location = new Point(258, 18);
             buscar.Name = "buscar";
@@ -156,6 +158,7 @@ namespace Sistema_Academia.Presentacion
             // 
             txtcedula.BackColor = Color.FromArgb(22, 18, 30);
             txtcedula.CharacterCasing = CharacterCasing.Lower;
+            txtcedula.Cursor = Cursors.IBeam;
             txtcedula.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtcedula.ForeColor = Color.White;
             txtcedula.Location = new Point(69, 19);
@@ -170,6 +173,7 @@ namespace Sistema_Academia.Presentacion
             // filtros
             // 
             filtros.BackColor = Color.FromArgb(22, 18, 30);
+            filtros.Cursor = Cursors.Hand;
             filtros.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             filtros.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             filtros.FlatStyle = FlatStyle.Flat;
@@ -187,6 +191,7 @@ namespace Sistema_Academia.Presentacion
             // eliminar
             // 
             eliminar.BackColor = Color.FromArgb(22, 18, 30);
+            eliminar.Cursor = Cursors.Hand;
             eliminar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             eliminar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             eliminar.FlatStyle = FlatStyle.Flat;
@@ -203,12 +208,13 @@ namespace Sistema_Academia.Presentacion
             // agregar
             // 
             agregar.BackColor = Color.FromArgb(22, 18, 30);
+            agregar.Cursor = Cursors.Hand;
             agregar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             agregar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             agregar.FlatStyle = FlatStyle.Flat;
             agregar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             agregar.ForeColor = Color.Snow;
-            agregar.Location = new Point(437, 17);
+            agregar.Location = new Point(442, 17);
             agregar.Name = "agregar";
             agregar.Size = new Size(136, 40);
             agregar.TabIndex = 0;
@@ -235,38 +241,38 @@ namespace Sistema_Academia.Presentacion
             dataGridViewTabla.BackgroundColor = Color.FromArgb(22, 18, 30);
             dataGridViewTabla.BorderStyle = BorderStyle.None;
             dataGridViewTabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.Padding = new Padding(30, 5, 5, 5);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridViewTabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(22, 18, 30);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(30, 5, 5, 5);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(22, 18, 30);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewTabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewTabla.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.Padding = new Padding(5);
-            dataGridViewCellStyle5.SelectionBackColor = Color.MediumPurple;
-            dataGridViewCellStyle5.SelectionForeColor = Color.White;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridViewTabla.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(22, 18, 30);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.Padding = new Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = Color.MediumPurple;
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewTabla.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewTabla.EnableHeadersVisualStyles = false;
             dataGridViewTabla.GridColor = Color.LightGray;
             dataGridViewTabla.Location = new Point(-2, 65);
             dataGridViewTabla.Name = "dataGridViewTabla";
             dataGridViewTabla.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 8.765218F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridViewTabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(22, 18, 30);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.765218F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(22, 18, 30);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridViewTabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewTabla.RowHeadersWidth = 49;
             dataGridViewTabla.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewTabla.Size = new Size(1850, 706);
@@ -277,7 +283,7 @@ namespace Sistema_Academia.Presentacion
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 18.1565228F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = SystemColors.Control;
-            title.Location = new Point(751, 13);
+            title.Location = new Point(734, 13);
             title.Name = "title";
             title.Size = new Size(369, 40);
             title.TabIndex = 2;
@@ -320,7 +326,7 @@ namespace Sistema_Academia.Presentacion
         private Panel panel;
         public DataGridView dataGridViewTabla;
         private Label title;
-        private PictureBox pictureBox2;
         private Button editar;
+        private PictureBox pictureBox2;
     }
 }

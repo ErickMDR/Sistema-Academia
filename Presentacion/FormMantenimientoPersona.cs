@@ -15,13 +15,18 @@ namespace Sistema_Academia.Presentacion
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
 
+            agregar.Click -= agregar_Click;
             agregar.Click += agregar_Click;
+            editar.Click -= editar_Click_1;
             editar.Click += editar_Click_1;
+            eliminar.Click -= eliminar_Click;
             eliminar.Click += eliminar_Click;
+            buscar.Click -= buscar_Click_1;
             buscar.Click += buscar_Click_1;
+            txtcedula.KeyDown -= txtcedula_KeyDown;
+            txtcedula.KeyDown += txtcedula_KeyDown;
 
             CargarDatosPersonas();
-            //AgregarHeaders();
         }
 
         private void CargarDatosPersonas()
@@ -30,6 +35,7 @@ namespace Sistema_Academia.Presentacion
             {
                 var dt = new TablaPersona().Listado();
                 dataGridViewTabla.DataSource = dt;
+                AgregarHeaders();
             }
             catch (Exception ex)
             {
@@ -40,11 +46,19 @@ namespace Sistema_Academia.Presentacion
 
         private void AgregarHeaders()
         {
-            var cols = dataGridViewTabla.Columns;
-            if (cols["persona_no"] != null) cols["persona_no"].HeaderText = "Nombre";
-            if (cols["persona_ap"] != null) cols["persona_ap"].HeaderText = "Apellido";
-            if (cols["persona_ci"] != null) cols["persona_ci"].HeaderText = "Cédula";
-            if (cols["tipo_persona_id"] != null) cols["tipo_persona_id"].HeaderText = "Tipo";
+            try
+            {
+                dataGridViewTabla.Columns["persona_id"].Visible = false;
+                dataGridViewTabla.Columns[1].HeaderText = "Cédula";
+                dataGridViewTabla.Columns[2].HeaderText = "Nombre";
+                dataGridViewTabla.Columns[3].HeaderText = "Apellido";
+                dataGridViewTabla.Columns[4].HeaderText = "Tipo de Persona";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar nombres de columna: {ex.Message}", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void agregar_Click(object sender, EventArgs e)
@@ -65,7 +79,8 @@ namespace Sistema_Academia.Presentacion
 
             var row = dataGridViewTabla.SelectedRows[0];
             var persona = new Persona
-            {
+            {   
+                Id = Convert.ToInt32(row.Cells["persona_id"].Value),
                 Nombre = row.Cells["persona_no"].Value.ToString(),
                 Apellido = row.Cells["persona_ap"].Value.ToString(),
                 Cedula = Convert.ToInt32(row.Cells["persona_ci"].Value),
@@ -133,6 +148,28 @@ namespace Sistema_Academia.Presentacion
             {
                 MessageBox.Show($"Error en búsqueda: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtcedula_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    e.SuppressKeyPress = true;
+                    e.Handled = true;
+
+                    buscar.Focus();
+                    buscar_Click_1(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al procesar búsqueda: {ex.Message}",
+                                  "Error",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error);
+                }
             }
         }
     }

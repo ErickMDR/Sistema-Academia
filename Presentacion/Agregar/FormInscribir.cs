@@ -1,8 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Windows.Forms;
-using Sistema_Academia.Entidades;
 using Sistema_Academia.Datos;
+using Sistema_Academia.Entidades;
+using System;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Sistema_Academia.Presentacion.Agregar
 {
@@ -16,14 +20,15 @@ namespace Sistema_Academia.Presentacion.Agregar
         {
             InitializeComponent();
 
-            // Cargar queries.json
             _config = new ConfigurationBuilder()
                 .SetBasePath(Application.StartupPath)
                 .AddJsonFile("queries.json")
                 .Build();
 
-            // Suscribir el botón Aceptar
+            this.Load += (s, e) => CargarCombos();
             aceptar.Click += aceptar_Click;
+            this.AcceptButton = aceptar;
+            CargarCombos();
         }
 
         private void aceptar_Click(object sender, EventArgs e)
@@ -31,33 +36,52 @@ namespace Sistema_Academia.Presentacion.Agregar
             if (!ValidarDatos())
                 return;
 
+            if (!int.TryParse(txtcedula.Text.Trim(), out _))
+            {
+                MessageBox.Show("La cédula debe contener solo números", "Validación",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
-                // Construcción de la inscripción temporal
+                var materia = (cmbmateria.SelectedItem as DataRowView)?["materia_de"]?.ToString();
+                var seccion = (cmbseccion.SelectedItem as DataRowView)?["seccion_de"]?.ToString();
+
+                if (string.IsNullOrEmpty(materia) || string.IsNullOrEmpty(seccion))
+                {
+                    MessageBox.Show("Debe seleccionar materia y sección válidas");
+                    return;
+                }
+
                 var inscripcion = new Inscripcion
                 {
                     Cedula = txtcedula.Text.Trim(),
-                    Nombre = txtnombre.Text.Trim(),
-                    Apellido = txtapellido.Text.Trim(),
-                    Materia = txtmateria.Text.Trim(),
-                    Seccion = txtseccion.Text.Trim()
+                    Materia = materia,
+                    Seccion = seccion
                 };
 
-                // Inserta todo (persona + curso + inscripcion)
                 using var tabla = new TablaInscripcion();
-                tabla.InsertarCompleto(inscripcion);
+                tabla.Insertar(inscripcion);
 
                 InscripcionExitosa = true;
                 MessageBox.Show("Inscripción realizada con éxito", "Éxito",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Clave: setear DialogResult a OK para que el ShowDialog devuelva OK
                 DialogResult = DialogResult.OK;
-                Close();
+                this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al inscribir: {ex.Message}", "Error",
+                string mensaje = ex.Message;
+
+                if (ex.Message.Contains("foreign key constraint"))
+                {
+                    mensaje = "No se pudo completar la inscripción. Verifique que:\n" +
+                             "1. La materia y sección seleccionadas existen\n" +
+                             "2. El curso está correctamente configurado";
+                }
+                MessageBox.Show($"Error al inscribir: {mensaje}", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -70,31 +94,86 @@ namespace Sistema_Academia.Presentacion.Agregar
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(txtnombre.Text))
+            if(cmbmateria.SelectedIndex == -1)
             {
-                MessageBox.Show("El nombre es obligatorio", "Validación",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione una materia");
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(txtapellido.Text))
+
+            if (cmbseccion.SelectedIndex == -1)
             {
-                MessageBox.Show("El apellido es obligatorio", "Validación",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(txtmateria.Text))
-            {
-                MessageBox.Show("La materia es obligatoria", "Validación",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(txtseccion.Text))
-            {
-                MessageBox.Show("La sección es obligatoria", "Validación",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione una sección");
                 return false;
             }
             return true;
+        }
+        private void CargarCombos()
+        {
+            try
+            {
+                var materias = new TablaMateria().Listado();
+                cmbmateria.DataSource = materias;
+                cmbmateria.DisplayMember = "materia_de";
+                cmbmateria.ValueMember = "materia_id";
+
+                var seccionesVacia = new DataTable();
+                seccionesVacia.Columns.Add("seccion_id", typeof(int));
+                seccionesVacia.Columns.Add("seccion_de", typeof(string));
+
+                cmbseccion.DataSource = seccionesVacia;
+                cmbseccion.DisplayMember = "seccion_de";
+                cmbseccion.ValueMember = "seccion_id";
+
+                cmbmateria.SelectedIndexChanged += Cmbmateria_SelectedIndexChanged;
+                
+                if (cmbmateria.Items.Count > 0)
+                {
+                    Cmbmateria_SelectedIndexChanged(cmbmateria, EventArgs.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar combos: {ex.Message}", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Cmbmateria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbmateria.SelectedValue != null && cmbmateria.SelectedValue is int materiaId)
+            {
+                CargarSeccionesPorMateria(materiaId);
+            }
+        }
+
+        private void CargarSeccionesPorMateria(int materiaId)
+        {
+            try
+            {
+                var secciones = new TablaSeccion().ObtenerSeccionesPorMateria(materiaId);
+
+                if (secciones.Columns.Contains("seccion_id") && secciones.Columns.Contains("seccion_de"))
+                {
+                    var seccionesCopia = secciones.Clone();
+                    foreach (DataRow row in secciones.Rows)
+                    {
+                        seccionesCopia.ImportRow(row);
+                    }
+
+                    cmbseccion.DataSource = seccionesCopia;
+                    cmbseccion.DisplayMember = "seccion_de";
+                    cmbseccion.ValueMember = "seccion_id";
+                }
+                else
+                {
+                    throw new Exception("Las columnas 'seccion_id' o 'seccion_de' no existen en los datos obtenidos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar secciones: {ex.Message}", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

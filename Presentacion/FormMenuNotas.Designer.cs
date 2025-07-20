@@ -66,7 +66,7 @@ namespace Sistema_Academia.Presentacion
             dataGridViewTabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(30, 5, 5, 5);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(22, 18, 30);
@@ -76,7 +76,7 @@ namespace Sistema_Academia.Presentacion
             dataGridViewTabla.ColumnHeadersHeight = 50;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14F);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.Padding = new Padding(5);
             dataGridViewCellStyle2.SelectionBackColor = Color.MediumPurple;
@@ -106,7 +106,7 @@ namespace Sistema_Academia.Presentacion
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 18.1565228F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = SystemColors.Control;
-            title.Location = new Point(845, 13);
+            title.Location = new Point(833, 13);
             title.Name = "title";
             title.Size = new Size(195, 40);
             title.TabIndex = 2;
@@ -137,13 +137,14 @@ namespace Sistema_Academia.Presentacion
             // asignar
             // 
             asignar.BackColor = Color.FromArgb(22, 18, 30);
+            asignar.Cursor = Cursors.Hand;
             asignar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             asignar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             asignar.FlatStyle = FlatStyle.Flat;
             asignar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             asignar.ForeColor = Color.Snow;
             asignar.ImageAlign = ContentAlignment.MiddleRight;
-            asignar.Location = new Point(53, 17);
+            asignar.Location = new Point(59, 17);
             asignar.Name = "asignar";
             asignar.Size = new Size(129, 40);
             asignar.TabIndex = 0;

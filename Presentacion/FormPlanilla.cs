@@ -19,7 +19,6 @@ namespace Sistema_Academia.Presentacion
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             CargarDatosPlanilla();
-            AgregarHeaders();
         }
 
         private void CargarDatosPlanilla(DataTable datosFiltrados = null)

@@ -39,10 +39,11 @@
             // cmbseccion
             // 
             cmbseccion.BackColor = Color.FromArgb(13, 13, 13);
+            cmbseccion.Cursor = Cursors.Hand;
             cmbseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbseccion.ForeColor = SystemColors.Menu;
             cmbseccion.FormattingEnabled = true;
-            cmbseccion.Location = new Point(84, 254);
+            cmbseccion.Location = new Point(84, 243);
             cmbseccion.Name = "cmbseccion";
             cmbseccion.Size = new Size(314, 38);
             cmbseccion.TabIndex = 27;
@@ -50,10 +51,11 @@
             // cmbmateria
             // 
             cmbmateria.BackColor = Color.FromArgb(13, 13, 13);
+            cmbmateria.Cursor = Cursors.Hand;
             cmbmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbmateria.ForeColor = SystemColors.Menu;
             cmbmateria.FormattingEnabled = true;
-            cmbmateria.Location = new Point(84, 163);
+            cmbmateria.Location = new Point(84, 152);
             cmbmateria.Name = "cmbmateria";
             cmbmateria.Size = new Size(314, 38);
             cmbmateria.TabIndex = 26;
@@ -63,7 +65,7 @@
             labelsec.AutoSize = true;
             labelsec.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelsec.ForeColor = Color.White;
-            labelsec.Location = new Point(94, 221);
+            labelsec.Location = new Point(94, 210);
             labelsec.Name = "labelsec";
             labelsec.Size = new Size(92, 30);
             labelsec.TabIndex = 25;
@@ -74,7 +76,7 @@
             labelmateria.AutoSize = true;
             labelmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelmateria.ForeColor = Color.White;
-            labelmateria.Location = new Point(94, 130);
+            labelmateria.Location = new Point(94, 119);
             labelmateria.Name = "labelmateria";
             labelmateria.Size = new Size(92, 30);
             labelmateria.TabIndex = 24;
@@ -82,12 +84,13 @@
             // 
             // aceptar
             // 
+            aceptar.Cursor = Cursors.Hand;
             aceptar.FlatAppearance.BorderColor = Color.White;
             aceptar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             aceptar.FlatStyle = FlatStyle.Flat;
             aceptar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             aceptar.ForeColor = Color.Snow;
-            aceptar.Location = new Point(143, 361);
+            aceptar.Location = new Point(142, 329);
             aceptar.Name = "aceptar";
             aceptar.Size = new Size(190, 48);
             aceptar.TabIndex = 23;
@@ -100,7 +103,7 @@
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = Color.White;
-            title.Location = new Point(182, 64);
+            title.Location = new Point(181, 52);
             title.Name = "title";
             title.Size = new Size(115, 36);
             title.TabIndex = 22;
@@ -111,7 +114,7 @@
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(13, 13, 13);
-            ClientSize = new Size(482, 505);
+            ClientSize = new Size(482, 455);
             Controls.Add(cmbseccion);
             Controls.Add(cmbmateria);
             Controls.Add(labelsec);

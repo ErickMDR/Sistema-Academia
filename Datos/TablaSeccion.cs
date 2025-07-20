@@ -70,5 +70,18 @@ namespace Sistema_Academia.Datos
 
             return secciones;
         }
+
+        public DataTable ObtenerSeccionesPorMateria(int materiaId)
+        {
+            var query = _config["Seccion:ObtenerSeccionesPorMateria"];
+            using var m = new ManejadorConexion(new Conexion());
+            using var cmd = new NpgsqlCommand(query, m.ConexionAbierta);
+            cmd.Parameters.AddWithValue("@materiaId", materiaId);
+            var adapter = new NpgsqlDataAdapter(cmd);
+            var table = new DataTable();
+            adapter.Fill(table);
+
+            return table;
+        }
     }
 }

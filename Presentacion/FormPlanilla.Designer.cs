@@ -1,4 +1,7 @@
-﻿namespace Sistema_Academia.Presentacion
+﻿using System.Windows.Forms;
+using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
+
+namespace Sistema_Academia.Presentacion
 {
     partial class FormPlanilla
     {
@@ -38,12 +41,10 @@
             panelNotas = new Panel();
             dataGridViewTabla = new DataGridView();
             title = new Label();
-            pictureBox1 = new PictureBox();
             panelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picfiltro).BeginInit();
             panelNotas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTabla).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelInfo
@@ -52,7 +53,6 @@
             panelInfo.Controls.Add(picfiltro);
             panelInfo.Controls.Add(filtro);
             panelInfo.Controls.Add(panelNotas);
-            panelInfo.Controls.Add(pictureBox1);
             panelInfo.Dock = DockStyle.Bottom;
             panelInfo.Location = new Point(0, -5);
             panelInfo.Name = "panelInfo";
@@ -63,22 +63,23 @@
             // 
             picfiltro.BackgroundImage = (Image)resources.GetObject("picfiltro.BackgroundImage");
             picfiltro.Image = Properties.Resources.Filter;
-            picfiltro.Location = new Point(62, 26);
+            picfiltro.Location = new Point(64, 26);
             picfiltro.Name = "picfiltro";
-            picfiltro.Size = new Size(24, 25);
+            picfiltro.Size = new Size(22, 22);
             picfiltro.TabIndex = 1;
             picfiltro.TabStop = false;
             // 
             // filtro
             // 
             filtro.BackColor = Color.FromArgb(22, 18, 30);
+            filtro.Cursor = Cursors.Hand;
             filtro.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             filtro.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             filtro.FlatStyle = FlatStyle.Flat;
             filtro.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             filtro.ForeColor = Color.Snow;
             filtro.ImageAlign = ContentAlignment.MiddleLeft;
-            filtro.Location = new Point(92, 17);
+            filtro.Location = new Point(89, 17);
             filtro.Name = "filtro";
             filtro.Size = new Size(83, 40);
             filtro.TabIndex = 0;
@@ -108,7 +109,7 @@
             dataGridViewTabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(30, 5, 5, 5);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(22, 18, 30);
@@ -118,7 +119,7 @@
             dataGridViewTabla.ColumnHeadersHeight = 50;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14F);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.Padding = new Padding(5);
             dataGridViewCellStyle2.SelectionBackColor = Color.MediumPurple;
@@ -127,7 +128,7 @@
             dataGridViewTabla.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewTabla.EnableHeadersVisualStyles = false;
             dataGridViewTabla.GridColor = Color.LightGray;
-            dataGridViewTabla.Location = new Point(-2, 65);
+            dataGridViewTabla.Location = new Point(-3, 65);
             dataGridViewTabla.Name = "dataGridViewTabla";
             dataGridViewTabla.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -148,19 +149,11 @@
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 18.1565228F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = SystemColors.Control;
-            title.Location = new Point(794, 13);
+            title.Location = new Point(772, 13);
             title.Name = "title";
             title.Size = new Size(301, 40);
             title.TabIndex = 2;
             title.Text = "PLANILLA DE NOTAS";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(47, 15);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(39, 44);
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
             // 
             // FormPlanilla
             // 
@@ -175,7 +168,6 @@
             panelNotas.ResumeLayout(false);
             panelNotas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTabla).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -187,6 +179,5 @@
         private DataGridView dataGridViewTabla;
         private Label title;
         private PictureBox picfiltro;
-        private PictureBox pictureBox1;
     }
 }

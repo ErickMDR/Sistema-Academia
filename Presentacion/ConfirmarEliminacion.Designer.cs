@@ -22,10 +22,11 @@ namespace Sistema_Academia.Presentacion
             // btnNo
             // 
             btnNo.BackColor = Color.FromArgb(13, 13, 13);
+            btnNo.Cursor = Cursors.Hand;
             btnNo.FlatAppearance.BorderColor = Color.White;
             btnNo.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             btnNo.FlatStyle = FlatStyle.Flat;
-            btnNo.Font = new Font("Segoe UI", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNo.Font = new Font("Segoe UI", 18.1565228F, FontStyle.Bold);
             btnNo.ForeColor = Color.Snow;
             btnNo.Location = new Point(271, 146);
             btnNo.Name = "btnNo";
@@ -38,10 +39,11 @@ namespace Sistema_Academia.Presentacion
             // btnSi
             // 
             btnSi.BackColor = Color.FromArgb(13, 13, 13);
+            btnSi.Cursor = Cursors.Hand;
             btnSi.FlatAppearance.BorderColor = Color.White;
             btnSi.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             btnSi.FlatStyle = FlatStyle.Flat;
-            btnSi.Font = new Font("Segoe UI", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSi.Font = new Font("Segoe UI", 18.1565228F, FontStyle.Bold);
             btnSi.ForeColor = Color.Snow;
             btnSi.Location = new Point(83, 147);
             btnSi.Name = "btnSi";
@@ -54,11 +56,11 @@ namespace Sistema_Academia.Presentacion
             // labelMensaje
             // 
             labelMensaje.AutoSize = true;
-            labelMensaje.Font = new Font("Segoe UI", 20.0347824F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelMensaje.Font = new Font("Segoe UI", 18.1565228F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelMensaje.ForeColor = SystemColors.Control;
-            labelMensaje.Location = new Point(45, 54);
+            labelMensaje.Location = new Point(60, 54);
             labelMensaje.Name = "labelMensaje";
-            labelMensaje.Size = new Size(381, 45);
+            labelMensaje.Size = new Size(349, 40);
             labelMensaje.TabIndex = 31;
             labelMensaje.Text = "¿Confirma la operación?";
             // 
@@ -76,7 +78,7 @@ namespace Sistema_Academia.Presentacion
             MinimizeBox = false;
             Name = "ConfirmarEliminacion";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Eliminación";
+            Text = "Confirmación";
             ResumeLayout(false);
             PerformLayout();
         }

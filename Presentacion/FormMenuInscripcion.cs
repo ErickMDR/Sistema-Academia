@@ -1,7 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using Sistema_Academia.Datos;
 using Sistema_Academia.Presentacion.Agregar;
-using Sistema_Academia.Datos;
+using System;
+using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Sistema_Academia.Presentacion
 {
@@ -11,19 +12,20 @@ namespace Sistema_Academia.Presentacion
         {
             InitializeComponent();
 
+            inscribir.Click -= inscribir_Click_1;
             inscribir.Click += inscribir_Click_1;
 
             WindowState = FormWindowState.Maximized;
             CargarDatosInscritos();
-            AgregarHeaders();
         }
-
+  
         private void CargarDatosInscritos()
         {
             try
             {
                 using var tablaInscripcion = new TablaInscripcion();
                 dataGridViewTabla.DataSource = tablaInscripcion.Listado();
+                AgregarHeaders();
             }
             catch (Exception ex)
             {
@@ -39,24 +41,22 @@ namespace Sistema_Academia.Presentacion
         {
             try
             {
-                dataGridViewTabla.Columns[0].HeaderText = "Cédula";
-                dataGridViewTabla.Columns[1].HeaderText = "Nombre";
-                dataGridViewTabla.Columns[2].HeaderText = "Apellido";
-                dataGridViewTabla.Columns[3].HeaderText = "Materia";
-                dataGridViewTabla.Columns[4].HeaderText = "Sección";
+                dataGridViewTabla.Columns["persona_ci"].HeaderText = "Cédula";
+                dataGridViewTabla.Columns["persona_no"].HeaderText = "Nombre";
+                dataGridViewTabla.Columns["persona_ap"].HeaderText = "Apellido";
+                dataGridViewTabla.Columns["materia_de"].HeaderText = "Materia";
+                dataGridViewTabla.Columns["seccion_de"].HeaderText = "Sección";
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    $"Error al cargar nombres de columna: {ex.Message}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show($"Error al cargar nombres de columna: {ex.Message}",
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void inscribir_Click_1(object sender, EventArgs e)
         {
+            Debug.WriteLine($"Evento click llamado desde: {new System.Diagnostics.StackTrace()}");
             using var form = new FormInscribir();
             if (form.ShowDialog(this) == DialogResult.OK && form.InscripcionExitosa)
             {

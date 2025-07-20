@@ -5,7 +5,6 @@ using System.Windows.Forms;
 
 namespace Sistema_Academia.Presentacion.Agregar
 {
-    
 
     public partial class FormAgregarSeccion : Form
     {
@@ -14,7 +13,6 @@ namespace Sistema_Academia.Presentacion.Agregar
 
         public bool SeccionAgregada { get; private set; } = false;
 
-        // Constructor para Agregar
         public FormAgregarSeccion()
         {
             InitializeComponent();
@@ -22,9 +20,9 @@ namespace Sistema_Academia.Presentacion.Agregar
             title.Text = "AGREGAR SECCIÓN";
             aceptar.Text = "Agregar";
             aceptar.Click += aceptar_Click;
+            this.AcceptButton = aceptar;
         }
 
-        // Constructor para Editar
         public FormAgregarSeccion(Seccion seccion) : this()
         {
             if (seccion == null) throw new ArgumentNullException(nameof(seccion));
@@ -33,6 +31,7 @@ namespace Sistema_Academia.Presentacion.Agregar
             title.Text = "EDITAR SECCIÓN";
             aceptar.Text = "Actualizar";
             txtseccion.Text = seccion.Descripcion;
+            this.AcceptButton = aceptar;
         }
 
         private void aceptar_Click(object sender, EventArgs e)

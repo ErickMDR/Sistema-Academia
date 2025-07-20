@@ -61,12 +61,13 @@
             // agregar
             // 
             agregar.BackColor = Color.FromArgb(22, 18, 30);
+            agregar.Cursor = Cursors.Hand;
             agregar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             agregar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             agregar.FlatStyle = FlatStyle.Flat;
             agregar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             agregar.ForeColor = Color.Snow;
-            agregar.Location = new Point(437, 17);
+            agregar.Location = new Point(442, 17);
             agregar.Name = "agregar";
             agregar.Size = new Size(136, 40);
             agregar.TabIndex = 0;
@@ -98,10 +99,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(738, 28);
+            pictureBox2.Location = new Point(736, 27);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(31, 23);
-            pictureBox2.TabIndex = 11;
+            pictureBox2.Size = new Size(24, 23);
+            pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
             // picfiltro
@@ -117,12 +118,13 @@
             // editar
             // 
             editar.BackColor = Color.FromArgb(22, 18, 30);
+            editar.Cursor = Cursors.Hand;
             editar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             editar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             editar.FlatStyle = FlatStyle.Flat;
             editar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             editar.ForeColor = Color.Snow;
-            editar.Location = new Point(762, 19);
+            editar.Location = new Point(761, 19);
             editar.Name = "editar";
             editar.Size = new Size(79, 40);
             editar.TabIndex = 10;
@@ -133,6 +135,7 @@
             // 
             // buscar
             // 
+            buscar.Cursor = Cursors.Hand;
             buscar.Image = (Image)resources.GetObject("buscar.Image");
             buscar.Location = new Point(258, 18);
             buscar.Name = "buscar";
@@ -172,6 +175,7 @@
             // 
             txtcedula.BackColor = Color.FromArgb(22, 18, 30);
             txtcedula.CharacterCasing = CharacterCasing.Lower;
+            txtcedula.Cursor = Cursors.IBeam;
             txtcedula.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtcedula.ForeColor = Color.White;
             txtcedula.Location = new Point(69, 19);
@@ -186,6 +190,7 @@
             // filtros
             // 
             filtros.BackColor = Color.FromArgb(22, 18, 30);
+            filtros.Cursor = Cursors.Hand;
             filtros.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             filtros.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             filtros.FlatStyle = FlatStyle.Flat;
@@ -203,6 +208,7 @@
             // eliminar
             // 
             eliminar.BackColor = Color.FromArgb(22, 18, 30);
+            eliminar.Cursor = Cursors.Hand;
             eliminar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             eliminar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             eliminar.FlatStyle = FlatStyle.Flat;
@@ -237,7 +243,7 @@
             dataGridViewTabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(30, 5, 5, 5);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(22, 18, 30);
@@ -247,7 +253,7 @@
             dataGridViewTabla.ColumnHeadersHeight = 50;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14F);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.Padding = new Padding(5);
             dataGridViewCellStyle2.SelectionBackColor = Color.MediumPurple;
@@ -277,7 +283,7 @@
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 18.1565228F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = SystemColors.Control;
-            title.Location = new Point(751, 13);
+            title.Location = new Point(716, 13);
             title.Name = "title";
             title.Size = new Size(406, 40);
             title.TabIndex = 2;
@@ -320,7 +326,7 @@
         private PictureBox picinscribir;
         private PictureBox buscar;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private Button editar;
+        private PictureBox pictureBox2;
     }
 }

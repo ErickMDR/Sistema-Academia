@@ -14,14 +14,13 @@ namespace Sistema_Academia.Presentacion
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
 
-            // Suscribir eventos
             agregar.Click += agregar_Click;
             editar.Click += editar_Click;
             eliminar.Click += eliminar_Click;
             buscar.Click += buscar_Click_1;
+            txtmateria.KeyDown += txtmateria_KeyDown;
 
             CargarDatosMaterias();
-            AgregarHeaders();
         }
 
         private void CargarDatosMaterias()
@@ -30,6 +29,7 @@ namespace Sistema_Academia.Presentacion
             {
                 using var tabla = new TablaMateria();
                 dataGridViewTabla.DataSource = tabla.Listado();
+                AgregarHeaders();
             }
             catch (Exception ex)
             {
@@ -159,6 +159,28 @@ namespace Sistema_Academia.Presentacion
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtmateria_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    e.SuppressKeyPress = true;
+                    e.Handled = true;
+
+                    buscar.Focus();
+                    buscar_Click_1(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al procesar búsqueda: {ex.Message}",
+                                  "Error",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error);
+                }
             }
         }
     }

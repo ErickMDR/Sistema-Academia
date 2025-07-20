@@ -14,14 +14,13 @@ namespace Sistema_Academia.Presentacion
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
 
-            // Suscripción de eventos
             agregar.Click += agregar_Click;
             editar.Click += editar_Click;
             eliminar.Click += eliminar_Click;
             buscar.Click += buscar_Click;
+            txtcedula.KeyDown += txtcedula_KeyDown;
 
             CargarDatosCursos();
-            //ConfigurarEncabezados();
         }
 
         private void CargarDatosCursos()
@@ -29,6 +28,7 @@ namespace Sistema_Academia.Presentacion
             try
             {
                 dataGridViewTabla.DataSource = new TablaCurso().Listado();
+                AgregarHeaders();
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace Sistema_Academia.Presentacion
             }
         }
 
-        private void ConfigurarEncabezados()
+        private void AgregarHeaders()
         {
             var cols = dataGridViewTabla.Columns;
 
@@ -148,7 +148,7 @@ namespace Sistema_Academia.Presentacion
             try
             {
                 dataGridViewTabla.DataSource = new TablaCurso().BuscarCursosPorCedulaProfesor(cedula);
-                ConfigurarEncabezados();
+                AgregarHeaders();
             }
             catch (Exception ex)
             {
@@ -157,6 +157,27 @@ namespace Sistema_Academia.Presentacion
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+        }
+        private void txtcedula_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    e.SuppressKeyPress = true;
+                    e.Handled = true;
+
+                    buscar.Focus();
+                    buscar_Click(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al procesar búsqueda: {ex.Message}",
+                                  "Error",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Error);
+                }
             }
         }
     }

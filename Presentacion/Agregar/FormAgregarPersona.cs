@@ -21,7 +21,9 @@ namespace Sistema_Academia.Presentacion.Agregar
             title.Text = "AGREGAR PERSONA";
             aceptar.Text = "Agregar";
             CargarTiposPersona();
+            aceptar.Click -= aceptar_Click_1;
             aceptar.Click += aceptar_Click_1;
+            this.AcceptButton = aceptar;
         }
 
         public FormAgregarPersona(Persona persona) : this()
@@ -37,6 +39,7 @@ namespace Sistema_Academia.Presentacion.Agregar
             txtapellido.Text = persona.Apellido;
             txtcedula.Text = persona.Cedula.ToString();
             comboBox.SelectedItem = persona.TipoPersona;
+            this.AcceptButton = aceptar;
         }
 
         private void CargarTiposPersona()

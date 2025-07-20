@@ -19,6 +19,7 @@ namespace Sistema_Academia.Presentacion.Filtros
         public FormFiltroPlanilla()
         {
             InitializeComponent();
+            this.AcceptButton = buscar;
         }
 
         private void buscar_Click(object sender, EventArgs e)
