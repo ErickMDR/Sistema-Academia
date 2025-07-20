@@ -21,6 +21,7 @@ namespace Sistema_Academia.Presentacion.Agregar
             title.Text = "AGREGAR PERSONA";
             aceptar.Text = "Agregar";
             CargarTiposPersona();
+            aceptar.Click -= aceptar_Click_1;
             aceptar.Click += aceptar_Click_1;
             this.AcceptButton = aceptar;
         }

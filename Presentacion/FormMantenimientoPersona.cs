@@ -15,11 +15,15 @@ namespace Sistema_Academia.Presentacion
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
 
+            agregar.Click -= agregar_Click;
             agregar.Click += agregar_Click;
             editar.Click -= editar_Click_1;
             editar.Click += editar_Click_1;
+            eliminar.Click -= eliminar_Click;
             eliminar.Click += eliminar_Click;
+            buscar.Click -= buscar_Click_1;
             buscar.Click += buscar_Click_1;
+            txtcedula.KeyDown -= txtcedula_KeyDown;
             txtcedula.KeyDown += txtcedula_KeyDown;
 
             CargarDatosPersonas();
@@ -44,10 +48,11 @@ namespace Sistema_Academia.Presentacion
         {
             try
             {
-                dataGridViewTabla.Columns[0].HeaderText = "Cédula";
-                dataGridViewTabla.Columns[1].HeaderText = "Nombre";
-                dataGridViewTabla.Columns[2].HeaderText = "Apellido";
-                dataGridViewTabla.Columns[3].HeaderText = "Tipo de Persona";
+                dataGridViewTabla.Columns["persona_id"].Visible = false;
+                dataGridViewTabla.Columns[1].HeaderText = "Cédula";
+                dataGridViewTabla.Columns[2].HeaderText = "Nombre";
+                dataGridViewTabla.Columns[3].HeaderText = "Apellido";
+                dataGridViewTabla.Columns[4].HeaderText = "Tipo de Persona";
             }
             catch (Exception ex)
             {
@@ -74,7 +79,8 @@ namespace Sistema_Academia.Presentacion
 
             var row = dataGridViewTabla.SelectedRows[0];
             var persona = new Persona
-            {
+            {   
+                Id = Convert.ToInt32(row.Cells["persona_id"].Value),
                 Nombre = row.Cells["persona_no"].Value.ToString(),
                 Apellido = row.Cells["persona_ap"].Value.ToString(),
                 Cedula = Convert.ToInt32(row.Cells["persona_ci"].Value),
