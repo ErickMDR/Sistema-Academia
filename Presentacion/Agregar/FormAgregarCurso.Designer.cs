@@ -178,10 +178,6 @@
         private Button aceptar;
         private TextBox txtcedula;
         private Label labelci;
-        private TextBox txtapellido;
-        private Label labelna;
-        private Label labelap;
-        private TextBox txtnombre;
         private Label labelsec;
         private Label labelmateria;
         private ComboBox cmbSeccion;

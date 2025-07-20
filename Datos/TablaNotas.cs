@@ -19,18 +19,7 @@ namespace Sistema_Academia.Datos
                 .AddJsonFile("queries.json")
                 .Build();
         }
-        public DataTable Listado()
-        {
-            var query = _config["Notas:Leer"];
-            using var m = new ManejadorConexion(new Conexion());
-            using var cmd = new NpgsqlCommand(query, m.ConexionAbierta);
 
-            var adapter = new NpgsqlDataAdapter(cmd);
-            var table = new DataTable();
-            adapter.Fill(table);
-
-            return table;
-        }
         public void Insertar(Nota notas)
         {
             var query = _config["Notas:Asignar"];

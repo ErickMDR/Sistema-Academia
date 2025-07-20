@@ -21,17 +21,6 @@ namespace Sistema_Academia.Datos
                 .Build();
         }
 
-        public DataTable Listado()
-        {
-            var dt = new DataTable();
-            var query = _config["Curso:Leer"];
-            using var m = new ManejadorConexion(new Conexion());
-            using var cmd = new NpgsqlCommand(query, m.ConexionAbierta);
-            using var reader = cmd.ExecuteReader();
-            dt.Load(reader);
-            return dt;
-        }
-
         public DataTable BuscarCursosPorCedulaProfesor(int cedulaProfesor)
         {
             var dt = new DataTable();

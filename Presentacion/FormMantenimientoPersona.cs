@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Sistema_Academia.Datos;
+using Sistema_Academia.Entidades;
+using Sistema_Academia.Presentacion.Agregar;
+using Sistema_Academia.Presentacion.Filtros;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Sistema_Academia.Datos;
-using Sistema_Academia.Entidades;
-using Sistema_Academia.Presentacion.Agregar;
 
 namespace Sistema_Academia.Presentacion
 {
@@ -79,7 +80,7 @@ namespace Sistema_Academia.Presentacion
 
             var row = dataGridViewTabla.SelectedRows[0];
             var persona = new Persona
-            {   
+            {
                 Id = Convert.ToInt32(row.Cells["persona_id"].Value),
                 Nombre = row.Cells["persona_no"].Value.ToString(),
                 Apellido = row.Cells["persona_ap"].Value.ToString(),
@@ -169,6 +170,17 @@ namespace Sistema_Academia.Presentacion
                                   "Error",
                                   MessageBoxButtons.OK,
                                   MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void filtro_Click_1(object sender, EventArgs e)
+        {
+            using (var formFiltro = new FormFiltroPersona())
+            {
+                if (formFiltro.ShowDialog() == DialogResult.OK)
+                {
+                    dataGridViewTabla.DataSource = formFiltro.PersonasFiltradas;
+                    AgregarHeaders();
                 }
             }
         }

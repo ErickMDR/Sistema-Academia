@@ -2,8 +2,10 @@ using Microsoft.Extensions.Configuration;
 using Npgsql;
 using Sistema_Academia.Entidades;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Text;
 
 namespace Sistema_Academia.Datos
 {
@@ -82,5 +84,80 @@ namespace Sistema_Academia.Datos
 
         private string ObtenerDescripcionTipoPersona(int id) =>
             id == 1 ? "Profesor" : "Estudiante";
+
+        public DataTable Filtrar(string materia = null, string seccion = null, string tipoPersona = null)
+        {
+            var dt = new DataTable();
+            var condiciones = new StringBuilder();
+            var parametros = new List<NpgsqlParameter>();
+
+            if (!string.IsNullOrEmpty(materia))
+            {
+                condiciones.Append(" AND m.materia_de ILIKE @materia");
+                parametros.Add(new NpgsqlParameter("@materia", $"%{materia}%"));
+            }
+
+            if (!string.IsNullOrEmpty(seccion))
+            {
+                condiciones.Append(" AND s.seccion_de ILIKE @seccion");
+                parametros.Add(new NpgsqlParameter("@seccion", $"%{seccion}%"));
+            }
+
+            if (!string.IsNullOrEmpty(tipoPersona))
+            {
+                condiciones.Append(" AND tp.tipo_persona_de ILIKE @tipoPersona");
+                parametros.Add(new NpgsqlParameter("@tipoPersona", $"%{tipoPersona}%"));
+            }
+
+            try
+            {
+                var queryBase = _config["Persona:FiltroCombinado"];
+                var queryFinal = string.Format(queryBase, condiciones.ToString());
+
+                using (var manejador = new ManejadorConexion(new Conexion()))
+                using (var cmd = new NpgsqlCommand(queryFinal, manejador.ConexionAbierta))
+                {
+                    cmd.Parameters.AddRange(parametros.ToArray());
+
+                    using (var lector = cmd.ExecuteReader())
+                    {
+                        dt.Load(lector);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al filtrar personas", ex);
+            }
+
+            return dt;
+        }
+
+        public DataTable ObtenerMaterias()
+        {
+            return EjecutarConsulta(_config["Persona:ObtenerMaterias"]);
+        }
+
+        public DataTable ObtenerSecciones()
+        {
+            return EjecutarConsulta(_config["Persona:ObtenerSecciones"]);
+        }
+
+        public DataTable ObtenerTiposPersona()
+        {
+            return EjecutarConsulta(_config["Persona:ObtenerTiposPersona"]);
+        }
+
+        private DataTable EjecutarConsulta(string query)
+        {
+            var dt = new DataTable();
+            using (var manejador = new ManejadorConexion(new Conexion()))
+            using (var cmd = new NpgsqlCommand(query, manejador.ConexionAbierta))
+            using (var lector = cmd.ExecuteReader())
+            {
+                dt.Load(lector);
+            }
+            return dt;
+        }
     }
 }

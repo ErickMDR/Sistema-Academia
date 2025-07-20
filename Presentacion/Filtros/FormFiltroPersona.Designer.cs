@@ -53,7 +53,7 @@
             panel.Controls.Add(title);
             panel.Location = new Point(0, -2);
             panel.Name = "panel";
-            panel.Size = new Size(482, 558);
+            panel.Size = new Size(482, 512);
             panel.TabIndex = 16;
             // 
             // cmbseccion
@@ -63,7 +63,7 @@
             cmbseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbseccion.ForeColor = SystemColors.Menu;
             cmbseccion.FormattingEnabled = true;
-            cmbseccion.Location = new Point(81, 241);
+            cmbseccion.Location = new Point(81, 225);
             cmbseccion.Name = "cmbseccion";
             cmbseccion.Size = new Size(314, 38);
             cmbseccion.TabIndex = 21;
@@ -75,7 +75,7 @@
             cmbmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbmateria.ForeColor = SystemColors.Menu;
             cmbmateria.FormattingEnabled = true;
-            cmbmateria.Location = new Point(81, 150);
+            cmbmateria.Location = new Point(81, 138);
             cmbmateria.Name = "cmbmateria";
             cmbmateria.Size = new Size(314, 38);
             cmbmateria.TabIndex = 20;
@@ -87,7 +87,7 @@
             cmbtipopersona.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbtipopersona.ForeColor = SystemColors.Menu;
             cmbtipopersona.FormattingEnabled = true;
-            cmbtipopersona.Location = new Point(81, 344);
+            cmbtipopersona.Location = new Point(81, 325);
             cmbtipopersona.Name = "cmbtipopersona";
             cmbtipopersona.Size = new Size(314, 38);
             cmbtipopersona.TabIndex = 19;
@@ -97,7 +97,7 @@
             labelsec.AutoSize = true;
             labelsec.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelsec.ForeColor = Color.White;
-            labelsec.Location = new Point(91, 208);
+            labelsec.Location = new Point(91, 192);
             labelsec.Name = "labelsec";
             labelsec.Size = new Size(92, 30);
             labelsec.TabIndex = 16;
@@ -108,7 +108,7 @@
             labelmateria.AutoSize = true;
             labelmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelmateria.ForeColor = Color.White;
-            labelmateria.Location = new Point(91, 117);
+            labelmateria.Location = new Point(91, 105);
             labelmateria.Name = "labelmateria";
             labelmateria.Size = new Size(92, 30);
             labelmateria.TabIndex = 15;
@@ -122,7 +122,7 @@
             aceptar.FlatStyle = FlatStyle.Flat;
             aceptar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             aceptar.ForeColor = Color.Snow;
-            aceptar.Location = new Point(148, 434);
+            aceptar.Location = new Point(148, 409);
             aceptar.Name = "aceptar";
             aceptar.Size = new Size(190, 48);
             aceptar.TabIndex = 4;
@@ -134,7 +134,7 @@
             labeltipopersona.AutoSize = true;
             labeltipopersona.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labeltipopersona.ForeColor = Color.White;
-            labeltipopersona.Location = new Point(91, 311);
+            labeltipopersona.Location = new Point(91, 292);
             labeltipopersona.Name = "labeltipopersona";
             labeltipopersona.Size = new Size(143, 30);
             labeltipopersona.TabIndex = 10;
@@ -145,7 +145,7 @@
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = Color.White;
-            title.Location = new Point(179, 51);
+            title.Location = new Point(179, 48);
             title.Name = "title";
             title.Size = new Size(115, 36);
             title.TabIndex = 3;
@@ -156,7 +156,7 @@
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(13, 13, 13);
-            ClientSize = new Size(482, 555);
+            ClientSize = new Size(482, 505);
             Controls.Add(panel);
             ForeColor = SystemColors.ControlLight;
             Name = "FormFiltroPersona";
