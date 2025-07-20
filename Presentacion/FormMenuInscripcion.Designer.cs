@@ -105,7 +105,7 @@
             dataGridViewTabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(30, 5, 5, 5);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(22, 18, 30);
@@ -115,7 +115,7 @@
             dataGridViewTabla.ColumnHeadersHeight = 50;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 14F);
             dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.Padding = new Padding(5);
             dataGridViewCellStyle2.SelectionBackColor = Color.MediumPurple;
@@ -145,7 +145,7 @@
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 18.1565228F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = SystemColors.Control;
-            title.Location = new Point(845, 13);
+            title.Location = new Point(827, 13);
             title.Name = "title";
             title.Size = new Size(201, 40);
             title.TabIndex = 2;

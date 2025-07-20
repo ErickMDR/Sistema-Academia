@@ -31,7 +31,7 @@
   "Curso": {
     "Buscar": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de FROM curso c JOIN persona p ON c.persona_id = p.persona_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id WHERE p.persona_ci = @cedulaProfesor AND p.tipo_persona_id = 1;",
     "Crear": "INSERT INTO curso (persona_id, materia_id, seccion_id) VALUES (@personaId, @materiaId, @seccionId);",
-    "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de FROM curso c JOIN persona p ON c.persona_id = p.persona_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id ORDER BY p.persona_ap, p.persona_no, m.materia_de;",
+    "Leer": "SELECT curso_id, p.persona_id, m.materia_id, s.seccion_id, p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de FROM curso c JOIN persona p ON c.persona_id = p.persona_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id ORDER BY p.persona_ci;",
     "Eliminar": "DELETE FROM curso WHERE curso_id = @cursoId;",
     "Actualizar": "UPDATE curso SET persona_id = @personaId, materia_id = @materiaId, seccion_id = @seccionId WHERE curso_id = @cursoId;",
     "FiltroMateria": "SELECT c.curso_id, c.persona_id, c.materia_id, c.seccion_id FROM curso c JOIN materia m ON c.materia_id = m.materia_id WHERE m.materia_de = @materia;",

@@ -85,7 +85,7 @@
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = Color.White;
-            title.Location = new Point(119, 51);
+            title.Location = new Point(125, 51);
             title.Name = "title";
             title.Size = new Size(236, 36);
             title.TabIndex = 41;

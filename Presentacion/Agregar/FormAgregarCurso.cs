@@ -35,8 +35,6 @@ namespace Sistema_Academia.Presentacion.Agregar
             title.Text = "EDITAR CURSO";
             aceptar.Text = "Actualizar";
 
-            txtcedula.Enabled = false;
-
             var prof = new TablaPersona().BuscarPorCedula(curso.ProfesorId);
             if (prof != null)
             {
@@ -87,7 +85,6 @@ namespace Sistema_Academia.Presentacion.Agregar
 
         private void Aceptar_Click(object sender, EventArgs e)
         {
-            // Validar cédula
             if (!int.TryParse(txtcedula.Text.Trim(), out int cedula))
             {
                 MessageBox.Show("La cédula debe ser numérica.", "Validación",
@@ -95,7 +92,6 @@ namespace Sistema_Academia.Presentacion.Agregar
                 return;
             }
 
-            // Validar selección de materia y sección
             if (cmbMateria.SelectedItem == null || cmbSeccion.SelectedItem == null)
             {
                 MessageBox.Show("Debes seleccionar materia y sección.", "Validación",
@@ -109,7 +105,6 @@ namespace Sistema_Academia.Presentacion.Agregar
 
                 if (_modo == FormMode.Agregar)
                 {
-                    // Verificar profesor existe
                     var prof = new TablaPersona().BuscarPorCedula(cedula);
                     if (prof == null)
                     {
@@ -128,7 +123,6 @@ namespace Sistema_Academia.Presentacion.Agregar
                 }
                 else
                 {
-                    // Actualizar materia y sección del curso existente
                     _cursoExistente.MateriaId = (int)cmbMateria.SelectedValue;
                     _cursoExistente.SeccionId = (int)cmbSeccion.SelectedValue;
                     tabla.Actualizar(_cursoExistente);
