@@ -1,6 +1,6 @@
-﻿namespace Sistema_Academia.Presentacion.Filtros
+﻿namespace Sistema_Academia.Presentacion.Agregar
 {
-    partial class FormAsignar
+    partial class FormAsignarNota
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel = new Panel();
             txtnota = new TextBox();
             aceptar = new Button();
             labelnota = new Label();
@@ -41,27 +40,7 @@
             labelna = new Label();
             labelap = new Label();
             txtnombre = new TextBox();
-            panel.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel
-            // 
-            panel.Controls.Add(txtnota);
-            panel.Controls.Add(aceptar);
-            panel.Controls.Add(labelnota);
-            panel.Controls.Add(txtcedula);
-            panel.Controls.Add(labelci);
-            panel.Controls.Add(labelmateria);
-            panel.Controls.Add(asignar);
-            panel.Controls.Add(txtmateria);
-            panel.Controls.Add(txtapellido);
-            panel.Controls.Add(labelna);
-            panel.Controls.Add(labelap);
-            panel.Controls.Add(txtnombre);
-            panel.Location = new Point(1, 2);
-            panel.Name = "panel";
-            panel.Size = new Size(482, 655);
-            panel.TabIndex = 14;
             // 
             // txtnota
             // 
@@ -69,14 +48,14 @@
             txtnota.CharacterCasing = CharacterCasing.Lower;
             txtnota.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtnota.ForeColor = Color.White;
-            txtnota.Location = new Point(83, 485);
+            txtnota.Location = new Point(84, 491);
             txtnota.Margin = new Padding(20);
             txtnota.MaxLength = 2;
             txtnota.Name = "txtnota";
             txtnota.PlaceholderText = "Ingrese nota";
             txtnota.ShortcutsEnabled = false;
             txtnota.Size = new Size(314, 37);
-            txtnota.TabIndex = 13;
+            txtnota.TabIndex = 25;
             // 
             // aceptar
             // 
@@ -85,10 +64,10 @@
             aceptar.FlatStyle = FlatStyle.Flat;
             aceptar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             aceptar.ForeColor = Color.Snow;
-            aceptar.Location = new Point(149, 564);
+            aceptar.Location = new Point(150, 570);
             aceptar.Name = "aceptar";
             aceptar.Size = new Size(190, 48);
-            aceptar.TabIndex = 4;
+            aceptar.TabIndex = 17;
             aceptar.Text = "Aceptar";
             aceptar.UseVisualStyleBackColor = true;
             // 
@@ -97,10 +76,10 @@
             labelnota.AutoSize = true;
             labelnota.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelnota.ForeColor = Color.White;
-            labelnota.Location = new Point(93, 453);
+            labelnota.Location = new Point(94, 459);
             labelnota.Name = "labelnota";
             labelnota.Size = new Size(65, 30);
-            labelnota.TabIndex = 12;
+            labelnota.TabIndex = 24;
             labelnota.Text = "Nota:";
             // 
             // txtcedula
@@ -109,24 +88,23 @@
             txtcedula.CharacterCasing = CharacterCasing.Lower;
             txtcedula.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtcedula.ForeColor = Color.White;
-            txtcedula.Location = new Point(83, 125);
+            txtcedula.Location = new Point(84, 131);
             txtcedula.Margin = new Padding(20);
             txtcedula.MaxLength = 20;
             txtcedula.Name = "txtcedula";
-            txtcedula.PlaceholderText = "Ingrese cédula";
             txtcedula.ShortcutsEnabled = false;
             txtcedula.Size = new Size(314, 37);
-            txtcedula.TabIndex = 1;
+            txtcedula.TabIndex = 14;
             // 
             // labelci
             // 
             labelci.AutoSize = true;
             labelci.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelci.ForeColor = Color.White;
-            labelci.Location = new Point(93, 92);
+            labelci.Location = new Point(94, 98);
             labelci.Name = "labelci";
             labelci.Size = new Size(85, 30);
-            labelci.TabIndex = 2;
+            labelci.TabIndex = 15;
             labelci.Text = "Cédula:";
             // 
             // labelmateria
@@ -134,10 +112,10 @@
             labelmateria.AutoSize = true;
             labelmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelmateria.ForeColor = Color.White;
-            labelmateria.Location = new Point(93, 371);
+            labelmateria.Location = new Point(94, 377);
             labelmateria.Name = "labelmateria";
             labelmateria.Size = new Size(92, 30);
-            labelmateria.TabIndex = 10;
+            labelmateria.TabIndex = 23;
             labelmateria.Text = "Materia:";
             // 
             // asignar
@@ -145,10 +123,10 @@
             asignar.AutoSize = true;
             asignar.Font = new Font("Segoe UI", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
             asignar.ForeColor = Color.White;
-            asignar.Location = new Point(131, 31);
+            asignar.Location = new Point(132, 37);
             asignar.Name = "asignar";
             asignar.Size = new Size(208, 36);
-            asignar.TabIndex = 3;
+            asignar.TabIndex = 16;
             asignar.Text = "ASIGNAR NOTA";
             // 
             // txtmateria
@@ -156,38 +134,36 @@
             txtmateria.BackColor = Color.FromArgb(13, 13, 13);
             txtmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtmateria.ForeColor = Color.White;
-            txtmateria.Location = new Point(83, 404);
+            txtmateria.Location = new Point(84, 410);
             txtmateria.Margin = new Padding(20);
             txtmateria.MaxLength = 50;
             txtmateria.Name = "txtmateria";
-            txtmateria.PlaceholderText = "Ingrese materia";
             txtmateria.ShortcutsEnabled = false;
             txtmateria.Size = new Size(314, 37);
-            txtmateria.TabIndex = 9;
+            txtmateria.TabIndex = 22;
             // 
             // txtapellido
             // 
             txtapellido.BackColor = Color.FromArgb(13, 13, 13);
             txtapellido.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtapellido.ForeColor = Color.White;
-            txtapellido.Location = new Point(83, 293);
+            txtapellido.Location = new Point(84, 299);
             txtapellido.Margin = new Padding(20);
             txtapellido.MaxLength = 30;
             txtapellido.Name = "txtapellido";
-            txtapellido.PlaceholderText = "Ingrese apellido";
             txtapellido.ShortcutsEnabled = false;
             txtapellido.Size = new Size(314, 37);
-            txtapellido.TabIndex = 5;
+            txtapellido.TabIndex = 18;
             // 
             // labelna
             // 
             labelna.AutoSize = true;
             labelna.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelna.ForeColor = Color.White;
-            labelna.Location = new Point(93, 176);
+            labelna.Location = new Point(94, 182);
             labelna.Name = "labelna";
             labelna.Size = new Size(99, 30);
-            labelna.TabIndex = 8;
+            labelna.TabIndex = 21;
             labelna.Text = "Nombre:";
             // 
             // labelap
@@ -195,10 +171,10 @@
             labelap.AutoSize = true;
             labelap.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelap.ForeColor = Color.White;
-            labelap.Location = new Point(93, 260);
+            labelap.Location = new Point(94, 266);
             labelap.Name = "labelap";
             labelap.Size = new Size(98, 30);
-            labelap.TabIndex = 6;
+            labelap.TabIndex = 19;
             labelap.Text = "Apellido:";
             // 
             // txtnombre
@@ -206,33 +182,41 @@
             txtnombre.BackColor = Color.FromArgb(13, 13, 13);
             txtnombre.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtnombre.ForeColor = Color.White;
-            txtnombre.Location = new Point(83, 209);
+            txtnombre.Location = new Point(84, 215);
             txtnombre.Margin = new Padding(20);
             txtnombre.MaxLength = 30;
             txtnombre.Name = "txtnombre";
-            txtnombre.PlaceholderText = "Ingrese nombre";
             txtnombre.ShortcutsEnabled = false;
             txtnombre.Size = new Size(314, 37);
-            txtnombre.TabIndex = 7;
+            txtnombre.TabIndex = 20;
             // 
-            // FormAsignar
+            // FormAsignarNota
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(13, 13, 13);
             ClientSize = new Size(482, 655);
-            Controls.Add(panel);
-            Name = "FormAsignar";
+            Controls.Add(txtnota);
+            Controls.Add(aceptar);
+            Controls.Add(labelnota);
+            Controls.Add(txtcedula);
+            Controls.Add(labelci);
+            Controls.Add(labelmateria);
+            Controls.Add(asignar);
+            Controls.Add(txtmateria);
+            Controls.Add(txtapellido);
+            Controls.Add(labelna);
+            Controls.Add(labelap);
+            Controls.Add(txtnombre);
+            Name = "FormAsignarNota";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Asignar Nota";
-            panel.ResumeLayout(false);
-            panel.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Panel panel;
         private TextBox txtnota;
         private Button aceptar;
         private Label labelnota;

@@ -39,7 +39,7 @@ namespace Sistema_Academia.Datos
 
             if (personaId == 0)
             {
-                personaId = InsertarPersona(inscripcion, m.ConexionAbierta);
+                throw new Exception($"No se encontró a la persona de cédula {inscripcion.Cedula}");
             }
 
             if (cursoId <= 0)
@@ -60,24 +60,6 @@ namespace Sistema_Academia.Datos
             using var cmd = new NpgsqlCommand(query, conexion);
             cmd.Parameters.AddWithValue("@cedula", Convert.ToInt32(cedula));
             return Convert.ToInt32(cmd.ExecuteScalar() ?? 0);
-        }
-
-        private int InsertarPersona(Inscripcion inscripcion, NpgsqlConnection conexion)
-        {
-            var query = _config["Inscripcion:InsertarPersona"];
-            using var cmd = new NpgsqlCommand(query, conexion);
-            cmd.Parameters.AddWithValue("@nombre", inscripcion.Nombre);
-            cmd.Parameters.AddWithValue("@apellido", inscripcion.Apellido);
-            if (int.TryParse(inscripcion.Cedula, out int cedula))
-            {
-                cmd.Parameters.AddWithValue("@cedula", cedula);
-            }
-            else
-            {
-                throw new ArgumentException("La cédula debe ser un número válido");
-            }
-
-            return Convert.ToInt32(cmd.ExecuteScalar());
         }
 
         private int ObtenerCursoId(string materia, string seccion, NpgsqlConnection conexion)

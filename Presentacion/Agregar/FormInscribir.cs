@@ -57,8 +57,6 @@ namespace Sistema_Academia.Presentacion.Agregar
                 var inscripcion = new Inscripcion
                 {
                     Cedula = txtcedula.Text.Trim(),
-                    Nombre = txtnombre.Text.Trim(),
-                    Apellido = txtapellido.Text.Trim(),
                     Materia = materia,
                     Seccion = seccion
                 };
@@ -93,18 +91,6 @@ namespace Sistema_Academia.Presentacion.Agregar
             if (string.IsNullOrWhiteSpace(txtcedula.Text))
             {
                 MessageBox.Show("La cédula es obligatoria", "Validación",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(txtnombre.Text))
-            {
-                MessageBox.Show("El nombre es obligatorio", "Validación",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(txtapellido.Text))
-            {
-                MessageBox.Show("El apellido es obligatorio", "Validación",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }

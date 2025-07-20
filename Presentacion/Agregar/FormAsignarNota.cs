@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sistema_Academia.Presentacion.Filtros
+namespace Sistema_Academia.Presentacion.Agregar
 {
-    public partial class FormAsignar : Form
+    public partial class FormAsignarNota : Form
     {
-        public FormAsignar()
+        public FormAsignarNota()
         {
             InitializeComponent();
             this.IsMdiContainer = true;

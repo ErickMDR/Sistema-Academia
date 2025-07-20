@@ -1,14 +1,13 @@
 {
   "Inscripcion": {
     "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de FROM inscripcion i JOIN persona p ON i.persona_id = p.persona_id JOIN curso c ON i.curso_id = c.curso_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id ORDER BY i.inscripcion_id DESC LIMIT 15;",
-    "InsertarPersona": "INSERT INTO persona (persona_no, persona_ap, persona_ci, tipo_persona_id) VALUES (@nombre, @apellido, @cedula, 2) RETURNING persona_id;",
     "ObtenerCurso": "SELECT c.curso_id FROM curso c JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id WHERE m.materia_de = @materia AND s.seccion_de = @seccion LIMIT 1;",
     "ObtenerPersona": "SELECT persona_id FROM persona WHERE persona_ci = @cedula;",
     "Inscribir": "INSERT INTO inscripcion (persona_id, curso_id) VALUES (@personaId, @cursoId);"
   },
 
   "Notas": {
-    "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, c.calificacion_nu FROM calificacion c JOIN inscripcion i ON c.inscripcion_id = i.inscripcion_id JOIN persona p ON i.persona_id = p.persona_id JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id JOIN curso cu ON i.curso_id = cu.curso_id JOIN materia m ON cu.materia_id = m.materia_id ORDER BY p.persona_ap, p.persona_no, m.materia_de;",
+    "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de FROM persona p JOIN inscripcion i ON p.persona_id = i.persona_id JOIN curso c ON i.curso_id = c.curso_id JOIN materia m ON c.materia_id = m.materia_id LEFT JOIN calificacion cal ON i.inscripcion_id = cal.inscripcion_id WHERE cal.calificacion_id IS NULL ORDER BY p.persona_ci;",
     "Asignar": "INSERT INTO calificacion (calificacion_nu, inscripcion_id) VALUES (@nota, @inscripcionId);"
   },
 
