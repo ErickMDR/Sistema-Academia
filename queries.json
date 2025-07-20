@@ -52,6 +52,7 @@
     "Crear": "INSERT INTO seccion (seccion_de) VALUES (@descripcion);",
     "Leer": "SELECT * FROM seccion;",
     "Eliminar": "DELETE FROM seccion WHERE seccion_id = @seccionId;",
-    "Actualizar": "UPDATE seccion SET seccion_de = @descripcion WHERE seccion_id = @seccionId;"
+    "Actualizar": "UPDATE seccion SET seccion_de = @descripcion WHERE seccion_id = @seccionId;",
+    "ObtenerSeccionesPorMateria": "SELECT DISTINCT s.seccion_id, s.seccion_de FROM seccion s JOIN curso c ON s.seccion_id = c.seccion_id WHERE c.materia_id = @materiaId"
   }
 }

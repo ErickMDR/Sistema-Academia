@@ -109,15 +109,73 @@ namespace Sistema_Academia.Presentacion.Agregar
         }
         private void CargarCombos()
         {
-            var materias = new TablaMateria().Listado();
-            cmbmateria.DataSource = materias;
-            cmbmateria.DisplayMember = "materia_de";
-            cmbmateria.ValueMember = "materia_id";
+            try
+            {
+                var materias = new TablaMateria().Listado();
+                cmbmateria.DataSource = materias;
+                cmbmateria.DisplayMember = "materia_de";
+                cmbmateria.ValueMember = "materia_id";
 
-            var secciones = new TablaSeccion().Listado();
-            cmbseccion.DataSource = secciones;
-            cmbseccion.DisplayMember = "seccion_de";
-            cmbseccion.ValueMember = "seccion_id";
+                var seccionesVacia = new DataTable();
+                seccionesVacia.Columns.Add("seccion_id", typeof(int));
+                seccionesVacia.Columns.Add("seccion_de", typeof(string));
+
+                cmbseccion.DataSource = seccionesVacia;
+                cmbseccion.DisplayMember = "seccion_de";
+                cmbseccion.ValueMember = "seccion_id";
+
+                cmbmateria.SelectedIndexChanged += Cmbmateria_SelectedIndexChanged;
+                
+                if (cmbmateria.Items.Count > 0)
+                {
+                    Cmbmateria_SelectedIndexChanged(cmbmateria, EventArgs.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar combos: {ex.Message}", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Cmbmateria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbmateria.SelectedValue != null && cmbmateria.SelectedValue is int materiaId)
+            {
+                CargarSeccionesPorMateria(materiaId);
+            }
+        }
+
+        private void CargarSeccionesPorMateria(int materiaId)
+        {
+            try
+            {
+                var secciones = new TablaSeccion().ObtenerSeccionesPorMateria(materiaId);
+
+                // Verificar que las columnas esperadas existan
+                if (secciones.Columns.Contains("seccion_id") && secciones.Columns.Contains("seccion_de"))
+                {
+                    // Crear una copia para evitar problemas de referencia
+                    var seccionesCopia = secciones.Clone();
+                    foreach (DataRow row in secciones.Rows)
+                    {
+                        seccionesCopia.ImportRow(row);
+                    }
+
+                    cmbseccion.DataSource = seccionesCopia;
+                    cmbseccion.DisplayMember = "seccion_de";
+                    cmbseccion.ValueMember = "seccion_id";
+                }
+                else
+                {
+                    throw new Exception("Las columnas 'seccion_id' o 'seccion_de' no existen en los datos obtenidos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar secciones: {ex.Message}", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
