@@ -38,12 +38,10 @@
             panelNotas = new Panel();
             dataGridViewTabla = new DataGridView();
             title = new Label();
-            pictureBox1 = new PictureBox();
             panelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picfiltro).BeginInit();
             panelNotas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTabla).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelInfo
@@ -52,7 +50,6 @@
             panelInfo.Controls.Add(picfiltro);
             panelInfo.Controls.Add(filtro);
             panelInfo.Controls.Add(panelNotas);
-            panelInfo.Controls.Add(pictureBox1);
             panelInfo.Dock = DockStyle.Bottom;
             panelInfo.Location = new Point(0, -5);
             panelInfo.Name = "panelInfo";
@@ -63,9 +60,9 @@
             // 
             picfiltro.BackgroundImage = (Image)resources.GetObject("picfiltro.BackgroundImage");
             picfiltro.Image = Properties.Resources.Filter;
-            picfiltro.Location = new Point(62, 26);
+            picfiltro.Location = new Point(64, 26);
             picfiltro.Name = "picfiltro";
-            picfiltro.Size = new Size(24, 25);
+            picfiltro.Size = new Size(22, 22);
             picfiltro.TabIndex = 1;
             picfiltro.TabStop = false;
             // 
@@ -155,14 +152,6 @@
             title.TabIndex = 2;
             title.Text = "PLANILLA DE NOTAS";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(47, 15);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(39, 44);
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            // 
             // FormPlanilla
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
@@ -176,7 +165,6 @@
             panelNotas.ResumeLayout(false);
             panelNotas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTabla).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -188,6 +176,5 @@
         private DataGridView dataGridViewTabla;
         private Label title;
         private PictureBox picfiltro;
-        private PictureBox pictureBox1;
     }
 }

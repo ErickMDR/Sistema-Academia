@@ -18,6 +18,15 @@ namespace Sistema_Academia
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             this.IsMdiContainer = true;
+            menuStrip1.Renderer = new ToolStripProfessionalRenderer(new CustomColors());
+        }
+
+        public class CustomColors : ProfessionalColorTable
+        {
+            public override Color MenuItemSelected => Color.MediumPurple;
+            public override Color MenuItemSelectedGradientBegin => Color.MediumPurple;
+            public override Color MenuItemSelectedGradientEnd => Color.MediumPurple;
+            public override Color MenuItemBorder => Color.DarkSlateBlue;
         }
         public void inscripcionToolStripMenuItem_Click(object sender, EventArgs e)
         {

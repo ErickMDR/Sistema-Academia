@@ -12,8 +12,8 @@
   },
 
   "Planilla": {
-    "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de, cl.calificacion_nu AS nota FROM inscripcion i JOIN persona p ON i.persona_id = p.persona_id JOIN curso c ON i.curso_id = c.curso_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id LEFT JOIN calificacion cl ON cl.inscripcion_id = i.inscripcion_id;",
-    "FiltroCombinado": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de, cl.calificacion_nu AS nota FROM inscripcion i JOIN persona p ON i.persona_id = p.persona_id JOIN curso c ON i.curso_id = c.curso_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id LEFT JOIN calificacion cl ON cl.inscripcion_id = i.inscripcion_id WHERE 1=1 {0};"
+    "Leer": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de, cl.calificacion_nu AS nota FROM inscripcion i JOIN persona p ON i.persona_id = p.persona_id JOIN curso c ON i.curso_id = c.curso_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id JOIN calificacion cl ON cl.inscripcion_id = i.inscripcion_id WHERE cl.calificacion_nu IS NOT NULL;",
+    "FiltroCombinado": "SELECT p.persona_ci, p.persona_no, p.persona_ap, m.materia_de, s.seccion_de, cl.calificacion_nu AS nota FROM inscripcion i JOIN persona p ON i.persona_id = p.persona_id JOIN curso c ON i.curso_id = c.curso_id JOIN materia m ON c.materia_id = m.materia_id JOIN seccion s ON c.seccion_id = s.seccion_id JOIN calificacion cl ON cl.inscripcion_id = i.inscripcion_id WHERE cl.calificacion_nu IS NOT NULL {0};"
   },
 
   "Persona": {
