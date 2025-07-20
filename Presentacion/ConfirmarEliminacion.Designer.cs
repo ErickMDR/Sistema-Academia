@@ -22,6 +22,7 @@ namespace Sistema_Academia.Presentacion
             // btnNo
             // 
             btnNo.BackColor = Color.FromArgb(13, 13, 13);
+            btnNo.Cursor = Cursors.Hand;
             btnNo.FlatAppearance.BorderColor = Color.White;
             btnNo.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             btnNo.FlatStyle = FlatStyle.Flat;
@@ -38,6 +39,7 @@ namespace Sistema_Academia.Presentacion
             // btnSi
             // 
             btnSi.BackColor = Color.FromArgb(13, 13, 13);
+            btnSi.Cursor = Cursors.Hand;
             btnSi.FlatAppearance.BorderColor = Color.White;
             btnSi.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             btnSi.FlatStyle = FlatStyle.Flat;
@@ -76,7 +78,7 @@ namespace Sistema_Academia.Presentacion
             MinimizeBox = false;
             Name = "ConfirmarEliminacion";
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Eliminación";
+            Text = "Confirmación";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -47,9 +47,10 @@
             // 
             txtseccion.BackColor = Color.FromArgb(13, 13, 13);
             txtseccion.CharacterCasing = CharacterCasing.Upper;
+            txtseccion.Cursor = Cursors.IBeam;
             txtseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtseccion.ForeColor = Color.White;
-            txtseccion.Location = new Point(84, 224);
+            txtseccion.Location = new Point(84, 214);
             txtseccion.Margin = new Padding(20);
             txtseccion.MaxLength = 1;
             txtseccion.Name = "txtseccion";
@@ -63,7 +64,7 @@
             labelsec.AutoSize = true;
             labelsec.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelsec.ForeColor = Color.White;
-            labelsec.Location = new Point(94, 192);
+            labelsec.Location = new Point(94, 182);
             labelsec.Name = "labelsec";
             labelsec.Size = new Size(92, 30);
             labelsec.TabIndex = 20;
@@ -74,7 +75,7 @@
             labelmateria.AutoSize = true;
             labelmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelmateria.ForeColor = Color.White;
-            labelmateria.Location = new Point(94, 110);
+            labelmateria.Location = new Point(94, 100);
             labelmateria.Name = "labelmateria";
             labelmateria.Size = new Size(92, 30);
             labelmateria.TabIndex = 19;
@@ -83,9 +84,10 @@
             // txtmateria
             // 
             txtmateria.BackColor = Color.FromArgb(13, 13, 13);
+            txtmateria.Cursor = Cursors.IBeam;
             txtmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtmateria.ForeColor = Color.White;
-            txtmateria.Location = new Point(84, 143);
+            txtmateria.Location = new Point(84, 133);
             txtmateria.Margin = new Padding(20);
             txtmateria.MaxLength = 50;
             txtmateria.Name = "txtmateria";
@@ -98,9 +100,10 @@
             // 
             txtcedula.BackColor = Color.FromArgb(13, 13, 13);
             txtcedula.CharacterCasing = CharacterCasing.Lower;
+            txtcedula.Cursor = Cursors.IBeam;
             txtcedula.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtcedula.ForeColor = Color.White;
-            txtcedula.Location = new Point(84, 325);
+            txtcedula.Location = new Point(84, 315);
             txtcedula.Margin = new Padding(20);
             txtcedula.MaxLength = 20;
             txtcedula.Name = "txtcedula";
@@ -114,7 +117,7 @@
             labelci.AutoSize = true;
             labelci.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelci.ForeColor = Color.White;
-            labelci.Location = new Point(94, 292);
+            labelci.Location = new Point(94, 282);
             labelci.Name = "labelci";
             labelci.Size = new Size(85, 30);
             labelci.TabIndex = 23;
@@ -123,9 +126,10 @@
             // txtapellido
             // 
             txtapellido.BackColor = Color.FromArgb(13, 13, 13);
+            txtapellido.Cursor = Cursors.IBeam;
             txtapellido.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtapellido.ForeColor = Color.White;
-            txtapellido.Location = new Point(84, 493);
+            txtapellido.Location = new Point(84, 483);
             txtapellido.Margin = new Padding(20);
             txtapellido.MaxLength = 30;
             txtapellido.Name = "txtapellido";
@@ -139,7 +143,7 @@
             labelna.AutoSize = true;
             labelna.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelna.ForeColor = Color.White;
-            labelna.Location = new Point(94, 376);
+            labelna.Location = new Point(94, 366);
             labelna.Name = "labelna";
             labelna.Size = new Size(99, 30);
             labelna.TabIndex = 27;
@@ -150,7 +154,7 @@
             labelap.AutoSize = true;
             labelap.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelap.ForeColor = Color.White;
-            labelap.Location = new Point(94, 460);
+            labelap.Location = new Point(94, 450);
             labelap.Name = "labelap";
             labelap.Size = new Size(98, 30);
             labelap.TabIndex = 25;
@@ -159,9 +163,10 @@
             // txtnombre
             // 
             txtnombre.BackColor = Color.FromArgb(13, 13, 13);
+            txtnombre.Cursor = Cursors.IBeam;
             txtnombre.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtnombre.ForeColor = Color.White;
-            txtnombre.Location = new Point(84, 409);
+            txtnombre.Location = new Point(84, 399);
             txtnombre.Margin = new Padding(20);
             txtnombre.MaxLength = 30;
             txtnombre.Name = "txtnombre";
@@ -173,12 +178,13 @@
             // buscar
             // 
             buscar.BackColor = Color.FromArgb(13, 13, 13);
+            buscar.Cursor = Cursors.Hand;
             buscar.FlatAppearance.BorderColor = Color.White;
             buscar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             buscar.FlatStyle = FlatStyle.Flat;
             buscar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buscar.ForeColor = Color.Snow;
-            buscar.Location = new Point(158, 570);
+            buscar.Location = new Point(158, 560);
             buscar.Name = "buscar";
             buscar.Size = new Size(162, 56);
             buscar.TabIndex = 28;
@@ -192,7 +198,7 @@
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = Color.White;
-            title.Location = new Point(184, 50);
+            title.Location = new Point(184, 44);
             title.Name = "title";
             title.Size = new Size(115, 36);
             title.TabIndex = 29;

@@ -53,12 +53,13 @@
             panel1.Controls.Add(labelmateria);
             panel1.Location = new Point(-5, -4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(492, 560);
+            panel1.Size = new Size(492, 513);
             panel1.TabIndex = 31;
             // 
             // cmbSeccion
             // 
             cmbSeccion.BackColor = Color.FromArgb(13, 13, 13);
+            cmbSeccion.Cursor = Cursors.Hand;
             cmbSeccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbSeccion.ForeColor = Color.White;
             cmbSeccion.FormattingEnabled = true;
@@ -70,6 +71,7 @@
             // cmbMateria
             // 
             cmbMateria.BackColor = Color.FromArgb(13, 13, 13);
+            cmbMateria.Cursor = Cursors.Hand;
             cmbMateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbMateria.ForeColor = Color.White;
             cmbMateria.FormattingEnabled = true;
@@ -92,12 +94,13 @@
             // aceptar
             // 
             aceptar.BackColor = Color.FromArgb(13, 13, 13);
+            aceptar.Cursor = Cursors.Hand;
             aceptar.FlatAppearance.BorderColor = Color.White;
             aceptar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             aceptar.FlatStyle = FlatStyle.Flat;
             aceptar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             aceptar.ForeColor = Color.Snow;
-            aceptar.Location = new Point(154, 416);
+            aceptar.Location = new Point(154, 406);
             aceptar.Name = "aceptar";
             aceptar.Size = new Size(162, 56);
             aceptar.TabIndex = 40;
@@ -109,6 +112,7 @@
             // 
             txtcedula.BackColor = Color.FromArgb(13, 13, 13);
             txtcedula.CharacterCasing = CharacterCasing.Lower;
+            txtcedula.Cursor = Cursors.IBeam;
             txtcedula.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtcedula.ForeColor = Color.White;
             txtcedula.Location = new Point(81, 152);
@@ -127,9 +131,9 @@
             labelci.ForeColor = Color.White;
             labelci.Location = new Point(91, 119);
             labelci.Name = "labelci";
-            labelci.Size = new Size(85, 30);
+            labelci.Size = new Size(173, 30);
             labelci.TabIndex = 35;
-            labelci.Text = "Cédula:";
+            labelci.Text = "Cédula Profesor:";
             // 
             // labelsec
             // 
@@ -157,7 +161,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(482, 555);
+            ClientSize = new Size(482, 505);
             Controls.Add(panel1);
             Name = "FormAgregarCurso";
             StartPosition = FormStartPosition.CenterScreen;

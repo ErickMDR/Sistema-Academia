@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             panel = new Panel();
+            cmbseccion = new ComboBox();
+            cmbmateria = new ComboBox();
             cmbtipopersona = new ComboBox();
             labelsec = new Label();
             labelmateria = new Label();
             aceptar = new Button();
             labeltipopersona = new Label();
             title = new Label();
-            cmbmateria = new ComboBox();
-            cmbseccion = new ComboBox();
             panel.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,9 +56,34 @@
             panel.Size = new Size(482, 558);
             panel.TabIndex = 16;
             // 
+            // cmbseccion
+            // 
+            cmbseccion.BackColor = Color.FromArgb(13, 13, 13);
+            cmbseccion.Cursor = Cursors.Hand;
+            cmbseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbseccion.ForeColor = SystemColors.Menu;
+            cmbseccion.FormattingEnabled = true;
+            cmbseccion.Location = new Point(81, 241);
+            cmbseccion.Name = "cmbseccion";
+            cmbseccion.Size = new Size(314, 38);
+            cmbseccion.TabIndex = 21;
+            // 
+            // cmbmateria
+            // 
+            cmbmateria.BackColor = Color.FromArgb(13, 13, 13);
+            cmbmateria.Cursor = Cursors.Hand;
+            cmbmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbmateria.ForeColor = SystemColors.Menu;
+            cmbmateria.FormattingEnabled = true;
+            cmbmateria.Location = new Point(81, 150);
+            cmbmateria.Name = "cmbmateria";
+            cmbmateria.Size = new Size(314, 38);
+            cmbmateria.TabIndex = 20;
+            // 
             // cmbtipopersona
             // 
             cmbtipopersona.BackColor = Color.FromArgb(13, 13, 13);
+            cmbtipopersona.Cursor = Cursors.Hand;
             cmbtipopersona.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbtipopersona.ForeColor = SystemColors.Menu;
             cmbtipopersona.FormattingEnabled = true;
@@ -91,6 +116,7 @@
             // 
             // aceptar
             // 
+            aceptar.Cursor = Cursors.Hand;
             aceptar.FlatAppearance.BorderColor = Color.White;
             aceptar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             aceptar.FlatStyle = FlatStyle.Flat;
@@ -124,28 +150,6 @@
             title.Size = new Size(115, 36);
             title.TabIndex = 3;
             title.Text = "FILTROS";
-            // 
-            // cmbmateria
-            // 
-            cmbmateria.BackColor = Color.FromArgb(13, 13, 13);
-            cmbmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbmateria.ForeColor = SystemColors.Menu;
-            cmbmateria.FormattingEnabled = true;
-            cmbmateria.Location = new Point(81, 150);
-            cmbmateria.Name = "cmbmateria";
-            cmbmateria.Size = new Size(314, 38);
-            cmbmateria.TabIndex = 20;
-            // 
-            // cmbseccion
-            // 
-            cmbseccion.BackColor = Color.FromArgb(13, 13, 13);
-            cmbseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbseccion.ForeColor = SystemColors.Menu;
-            cmbseccion.FormattingEnabled = true;
-            cmbseccion.Location = new Point(81, 241);
-            cmbseccion.Name = "cmbseccion";
-            cmbseccion.Size = new Size(314, 38);
-            cmbseccion.TabIndex = 21;
             // 
             // FormFiltroPersona
             // 

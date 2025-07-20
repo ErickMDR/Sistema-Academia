@@ -63,6 +63,7 @@
             // 
             txtseccion.BackColor = Color.FromArgb(13, 13, 13);
             txtseccion.CharacterCasing = CharacterCasing.Upper;
+            txtseccion.Cursor = Cursors.IBeam;
             txtseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtseccion.ForeColor = Color.White;
             txtseccion.Location = new Point(84, 163);
@@ -76,6 +77,7 @@
             // 
             // aceptar
             // 
+            aceptar.Cursor = Cursors.Hand;
             aceptar.FlatAppearance.BorderColor = Color.White;
             aceptar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             aceptar.FlatStyle = FlatStyle.Flat;

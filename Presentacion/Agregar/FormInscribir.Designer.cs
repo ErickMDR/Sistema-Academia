@@ -58,6 +58,7 @@
             // cmbseccion
             // 
             cmbseccion.BackColor = Color.FromArgb(13, 13, 13);
+            cmbseccion.Cursor = Cursors.Hand;
             cmbseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbseccion.ForeColor = SystemColors.Menu;
             cmbseccion.FormattingEnabled = true;
@@ -69,6 +70,7 @@
             // cmbmateria
             // 
             cmbmateria.BackColor = Color.FromArgb(13, 13, 13);
+            cmbmateria.Cursor = Cursors.Hand;
             cmbmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbmateria.ForeColor = SystemColors.Menu;
             cmbmateria.FormattingEnabled = true;
@@ -79,6 +81,7 @@
             // 
             // aceptar
             // 
+            aceptar.Cursor = Cursors.Hand;
             aceptar.FlatAppearance.BorderColor = Color.White;
             aceptar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             aceptar.FlatStyle = FlatStyle.Flat;
@@ -106,6 +109,7 @@
             // 
             txtcedula.BackColor = Color.FromArgb(13, 13, 13);
             txtcedula.CharacterCasing = CharacterCasing.Lower;
+            txtcedula.Cursor = Cursors.IBeam;
             txtcedula.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtcedula.ForeColor = Color.White;
             txtcedula.Location = new Point(83, 125);

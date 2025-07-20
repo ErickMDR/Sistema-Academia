@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMantenimientoMateria));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             panelInfo = new Panel();
             pictureBox1 = new PictureBox();
             buscar = new PictureBox();
@@ -82,6 +82,7 @@
             // 
             // buscar
             // 
+            buscar.Cursor = Cursors.Hand;
             buscar.Image = (Image)resources.GetObject("buscar.Image");
             buscar.Location = new Point(258, 18);
             buscar.Name = "buscar";
@@ -93,6 +94,7 @@
             // editar
             // 
             editar.BackColor = Color.FromArgb(22, 18, 30);
+            editar.Cursor = Cursors.Hand;
             editar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             editar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             editar.FlatStyle = FlatStyle.Flat;
@@ -128,6 +130,7 @@
             // txtmateria
             // 
             txtmateria.BackColor = Color.FromArgb(22, 18, 30);
+            txtmateria.Cursor = Cursors.IBeam;
             txtmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtmateria.ForeColor = Color.White;
             txtmateria.Location = new Point(69, 19);
@@ -142,12 +145,13 @@
             // eliminar
             // 
             eliminar.BackColor = Color.FromArgb(22, 18, 30);
+            eliminar.Cursor = Cursors.Hand;
             eliminar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             eliminar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             eliminar.FlatStyle = FlatStyle.Flat;
             eliminar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             eliminar.ForeColor = Color.Snow;
-            eliminar.Location = new Point(505, 19);
+            eliminar.Location = new Point(506, 19);
             eliminar.Name = "eliminar";
             eliminar.Size = new Size(127, 40);
             eliminar.TabIndex = 1;
@@ -158,12 +162,13 @@
             // agregar
             // 
             agregar.BackColor = Color.FromArgb(22, 18, 30);
+            agregar.Cursor = Cursors.Hand;
             agregar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             agregar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             agregar.FlatStyle = FlatStyle.Flat;
             agregar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             agregar.ForeColor = Color.Snow;
-            agregar.Location = new Point(349, 17);
+            agregar.Location = new Point(354, 17);
             agregar.Name = "agregar";
             agregar.Size = new Size(136, 40);
             agregar.TabIndex = 0;
@@ -190,38 +195,38 @@
             dataGridViewTabla.BackgroundColor = Color.FromArgb(22, 18, 30);
             dataGridViewTabla.BorderStyle = BorderStyle.None;
             dataGridViewTabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(30, 5, 5, 5);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridViewTabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(22, 18, 30);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.Padding = new Padding(30, 5, 5, 5);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(22, 18, 30);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridViewTabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridViewTabla.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.Padding = new Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = Color.MediumPurple;
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridViewTabla.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(22, 18, 30);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.Padding = new Padding(5);
+            dataGridViewCellStyle8.SelectionBackColor = Color.MediumPurple;
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dataGridViewTabla.DefaultCellStyle = dataGridViewCellStyle8;
             dataGridViewTabla.EnableHeadersVisualStyles = false;
             dataGridViewTabla.GridColor = Color.LightGray;
             dataGridViewTabla.Location = new Point(-2, 65);
             dataGridViewTabla.Name = "dataGridViewTabla";
             dataGridViewTabla.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 8.765218F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(22, 18, 30);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridViewTabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(22, 18, 30);
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 8.765218F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(22, 18, 30);
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dataGridViewTabla.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dataGridViewTabla.RowHeadersWidth = 49;
             dataGridViewTabla.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewTabla.Size = new Size(1850, 706);

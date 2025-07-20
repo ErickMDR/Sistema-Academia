@@ -63,6 +63,7 @@
             // comboBox
             // 
             comboBox.BackColor = Color.FromArgb(13, 13, 13);
+            comboBox.Cursor = Cursors.Hand;
             comboBox.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBox.ForeColor = SystemColors.Menu;
             comboBox.FormattingEnabled = true;
@@ -73,6 +74,7 @@
             // 
             // aceptar
             // 
+            aceptar.Cursor = Cursors.Hand;
             aceptar.FlatAppearance.BorderColor = Color.White;
             aceptar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             aceptar.FlatStyle = FlatStyle.Flat;
@@ -90,6 +92,7 @@
             // 
             txtcedula.BackColor = Color.FromArgb(13, 13, 13);
             txtcedula.CharacterCasing = CharacterCasing.Lower;
+            txtcedula.Cursor = Cursors.IBeam;
             txtcedula.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtcedula.ForeColor = Color.White;
             txtcedula.Location = new Point(83, 125);
@@ -137,6 +140,7 @@
             // txtapellido
             // 
             txtapellido.BackColor = Color.FromArgb(13, 13, 13);
+            txtapellido.Cursor = Cursors.IBeam;
             txtapellido.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtapellido.ForeColor = Color.White;
             txtapellido.Location = new Point(83, 293);
@@ -173,6 +177,7 @@
             // txtnombre
             // 
             txtnombre.BackColor = Color.FromArgb(13, 13, 13);
+            txtnombre.Cursor = Cursors.IBeam;
             txtnombre.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtnombre.ForeColor = Color.White;
             txtnombre.Location = new Point(83, 209);

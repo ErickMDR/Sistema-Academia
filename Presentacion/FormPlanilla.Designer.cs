@@ -72,13 +72,14 @@
             // filtro
             // 
             filtro.BackColor = Color.FromArgb(22, 18, 30);
+            filtro.Cursor = Cursors.Hand;
             filtro.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             filtro.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             filtro.FlatStyle = FlatStyle.Flat;
             filtro.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             filtro.ForeColor = Color.Snow;
             filtro.ImageAlign = ContentAlignment.MiddleLeft;
-            filtro.Location = new Point(92, 17);
+            filtro.Location = new Point(89, 17);
             filtro.Name = "filtro";
             filtro.Size = new Size(83, 40);
             filtro.TabIndex = 0;

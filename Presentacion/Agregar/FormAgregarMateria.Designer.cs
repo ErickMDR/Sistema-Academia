@@ -62,9 +62,10 @@
             // txtmateria
             // 
             txtmateria.BackColor = Color.FromArgb(13, 13, 13);
+            txtmateria.Cursor = Cursors.IBeam;
             txtmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtmateria.ForeColor = Color.White;
-            txtmateria.Location = new Point(84, 159);
+            txtmateria.Location = new Point(84, 162);
             txtmateria.Margin = new Padding(20);
             txtmateria.MaxLength = 50;
             txtmateria.Name = "txtmateria";
@@ -75,6 +76,7 @@
             // 
             // aceptar
             // 
+            aceptar.Cursor = Cursors.Hand;
             aceptar.FlatAppearance.BorderColor = Color.White;
             aceptar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             aceptar.FlatStyle = FlatStyle.Flat;

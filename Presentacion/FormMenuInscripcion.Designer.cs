@@ -68,15 +68,16 @@
             // inscribir
             // 
             inscribir.BackColor = Color.FromArgb(22, 18, 30);
+            inscribir.Cursor = Cursors.Hand;
             inscribir.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             inscribir.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             inscribir.FlatStyle = FlatStyle.Flat;
             inscribir.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             inscribir.ForeColor = Color.Snow;
             inscribir.ImageAlign = ContentAlignment.MiddleRight;
-            inscribir.Location = new Point(53, 17);
+            inscribir.Location = new Point(61, 18);
             inscribir.Name = "inscribir";
-            inscribir.Size = new Size(129, 40);
+            inscribir.Size = new Size(129, 39);
             inscribir.TabIndex = 0;
             inscribir.Text = "Inscribir";
             inscribir.TextAlign = ContentAlignment.MiddleRight;

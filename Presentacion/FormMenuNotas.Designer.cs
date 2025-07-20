@@ -137,13 +137,14 @@ namespace Sistema_Academia.Presentacion
             // asignar
             // 
             asignar.BackColor = Color.FromArgb(22, 18, 30);
+            asignar.Cursor = Cursors.Hand;
             asignar.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
             asignar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
             asignar.FlatStyle = FlatStyle.Flat;
             asignar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             asignar.ForeColor = Color.Snow;
             asignar.ImageAlign = ContentAlignment.MiddleRight;
-            asignar.Location = new Point(53, 17);
+            asignar.Location = new Point(59, 17);
             asignar.Name = "asignar";
             asignar.Size = new Size(129, 40);
             asignar.TabIndex = 0;
