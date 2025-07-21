@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel = new Panel();
-            cmbseccion = new ComboBox();
-            cmbmateria = new ComboBox();
+            txtseccion = new TextBox();
+            txtmateria = new TextBox();
             cmbtipopersona = new ComboBox();
             labelsec = new Label();
             labelmateria = new Label();
@@ -43,8 +43,8 @@
             // panel
             // 
             panel.BackColor = Color.FromArgb(13, 13, 13);
-            panel.Controls.Add(cmbseccion);
-            panel.Controls.Add(cmbmateria);
+            panel.Controls.Add(txtseccion);
+            panel.Controls.Add(txtmateria);
             panel.Controls.Add(cmbtipopersona);
             panel.Controls.Add(labelsec);
             panel.Controls.Add(labelmateria);
@@ -56,29 +56,36 @@
             panel.Size = new Size(482, 512);
             panel.TabIndex = 16;
             // 
-            // cmbseccion
+            // txtseccion
             // 
-            cmbseccion.BackColor = Color.FromArgb(13, 13, 13);
-            cmbseccion.Cursor = Cursors.Hand;
-            cmbseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbseccion.ForeColor = SystemColors.Menu;
-            cmbseccion.FormattingEnabled = true;
-            cmbseccion.Location = new Point(81, 225);
-            cmbseccion.Name = "cmbseccion";
-            cmbseccion.Size = new Size(314, 38);
-            cmbseccion.TabIndex = 21;
+            txtseccion.BackColor = Color.FromArgb(13, 13, 13);
+            txtseccion.CharacterCasing = CharacterCasing.Upper;
+            txtseccion.Cursor = Cursors.IBeam;
+            txtseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtseccion.ForeColor = Color.White;
+            txtseccion.Location = new Point(81, 223);
+            txtseccion.Margin = new Padding(20);
+            txtseccion.MaxLength = 1;
+            txtseccion.Name = "txtseccion";
+            txtseccion.PlaceholderText = "Ingrese sección";
+            txtseccion.ShortcutsEnabled = false;
+            txtseccion.Size = new Size(314, 37);
+            txtseccion.TabIndex = 29;
             // 
-            // cmbmateria
+            // txtmateria
             // 
-            cmbmateria.BackColor = Color.FromArgb(13, 13, 13);
-            cmbmateria.Cursor = Cursors.Hand;
-            cmbmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbmateria.ForeColor = SystemColors.Menu;
-            cmbmateria.FormattingEnabled = true;
-            cmbmateria.Location = new Point(81, 138);
-            cmbmateria.Name = "cmbmateria";
-            cmbmateria.Size = new Size(314, 38);
-            cmbmateria.TabIndex = 20;
+            txtmateria.BackColor = Color.FromArgb(13, 13, 13);
+            txtmateria.Cursor = Cursors.IBeam;
+            txtmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtmateria.ForeColor = Color.White;
+            txtmateria.Location = new Point(81, 134);
+            txtmateria.Margin = new Padding(20);
+            txtmateria.MaxLength = 50;
+            txtmateria.Name = "txtmateria";
+            txtmateria.PlaceholderText = "Ingrese materia";
+            txtmateria.ShortcutsEnabled = false;
+            txtmateria.Size = new Size(314, 37);
+            txtmateria.TabIndex = 28;
             // 
             // cmbtipopersona
             // 
@@ -126,8 +133,9 @@
             aceptar.Name = "aceptar";
             aceptar.Size = new Size(190, 48);
             aceptar.TabIndex = 4;
-            aceptar.Text = "Aceptar";
+            aceptar.Text = "Filtrar";
             aceptar.UseVisualStyleBackColor = true;
+            aceptar.Click += aceptar_Click;
             // 
             // labeltipopersona
             // 
@@ -176,7 +184,7 @@
         private Label labelsec;
         private Label labelmateria;
         private ComboBox cmbtipopersona;
-        private ComboBox cmbseccion;
-        private ComboBox cmbmateria;
+        private TextBox txtseccion;
+        private TextBox txtmateria;
     }
 }

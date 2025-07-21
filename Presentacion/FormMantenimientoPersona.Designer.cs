@@ -204,7 +204,7 @@
             filtro.TextAlign = ContentAlignment.MiddleRight;
             filtro.UseMnemonic = false;
             filtro.UseVisualStyleBackColor = false;
-            filtro.Click += filtro_Click_1;
+            filtro.Click += filtro_Click;
             // 
             // eliminar
             // 

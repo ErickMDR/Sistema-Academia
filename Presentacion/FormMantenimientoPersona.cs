@@ -173,7 +173,7 @@ namespace Sistema_Academia.Presentacion
                 }
             }
         }
-        private void filtro_Click_1(object sender, EventArgs e)
+        private void filtro_Click(object sender, EventArgs e)
         {
             using (var formFiltro = new FormFiltroPersona())
             {

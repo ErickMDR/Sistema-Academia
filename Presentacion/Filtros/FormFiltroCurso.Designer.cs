@@ -28,44 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cmbseccion = new ComboBox();
-            cmbmateria = new ComboBox();
             labelsec = new Label();
             labelmateria = new Label();
-            aceptar = new Button();
+            filtrar = new Button();
             title = new Label();
+            txtseccion = new TextBox();
+            txtmateria = new TextBox();
             SuspendLayout();
-            // 
-            // cmbseccion
-            // 
-            cmbseccion.BackColor = Color.FromArgb(13, 13, 13);
-            cmbseccion.Cursor = Cursors.Hand;
-            cmbseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbseccion.ForeColor = SystemColors.Menu;
-            cmbseccion.FormattingEnabled = true;
-            cmbseccion.Location = new Point(84, 243);
-            cmbseccion.Name = "cmbseccion";
-            cmbseccion.Size = new Size(314, 38);
-            cmbseccion.TabIndex = 27;
-            // 
-            // cmbmateria
-            // 
-            cmbmateria.BackColor = Color.FromArgb(13, 13, 13);
-            cmbmateria.Cursor = Cursors.Hand;
-            cmbmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbmateria.ForeColor = SystemColors.Menu;
-            cmbmateria.FormattingEnabled = true;
-            cmbmateria.Location = new Point(84, 152);
-            cmbmateria.Name = "cmbmateria";
-            cmbmateria.Size = new Size(314, 38);
-            cmbmateria.TabIndex = 26;
             // 
             // labelsec
             // 
             labelsec.AutoSize = true;
             labelsec.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelsec.ForeColor = Color.White;
-            labelsec.Location = new Point(94, 210);
+            labelsec.Location = new Point(94, 194);
             labelsec.Name = "labelsec";
             labelsec.Size = new Size(92, 30);
             labelsec.TabIndex = 25;
@@ -76,50 +52,81 @@
             labelmateria.AutoSize = true;
             labelmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelmateria.ForeColor = Color.White;
-            labelmateria.Location = new Point(94, 119);
+            labelmateria.Location = new Point(94, 103);
             labelmateria.Name = "labelmateria";
             labelmateria.Size = new Size(92, 30);
             labelmateria.TabIndex = 24;
             labelmateria.Text = "Materia:";
             // 
-            // aceptar
+            // filtrar
             // 
-            aceptar.Cursor = Cursors.Hand;
-            aceptar.FlatAppearance.BorderColor = Color.White;
-            aceptar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
-            aceptar.FlatStyle = FlatStyle.Flat;
-            aceptar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            aceptar.ForeColor = Color.Snow;
-            aceptar.Location = new Point(142, 329);
-            aceptar.Name = "aceptar";
-            aceptar.Size = new Size(190, 48);
-            aceptar.TabIndex = 23;
-            aceptar.Text = "Aceptar";
-            aceptar.UseVisualStyleBackColor = true;
-            aceptar.Click += aceptar_Click;
+            filtrar.Cursor = Cursors.Hand;
+            filtrar.FlatAppearance.BorderColor = Color.White;
+            filtrar.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
+            filtrar.FlatStyle = FlatStyle.Flat;
+            filtrar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            filtrar.ForeColor = Color.Snow;
+            filtrar.Location = new Point(142, 309);
+            filtrar.Name = "filtrar";
+            filtrar.Size = new Size(190, 48);
+            filtrar.TabIndex = 23;
+            filtrar.Text = "Filtrar";
+            filtrar.UseVisualStyleBackColor = true;
+            filtrar.Click += aceptar_Click;
             // 
             // title
             // 
             title.AutoSize = true;
             title.Font = new Font("Segoe UI", 16.2782612F, FontStyle.Bold, GraphicsUnit.Point, 0);
             title.ForeColor = Color.White;
-            title.Location = new Point(181, 52);
+            title.Location = new Point(181, 39);
             title.Name = "title";
             title.Size = new Size(115, 36);
             title.TabIndex = 22;
             title.Text = "FILTROS";
+            // 
+            // txtseccion
+            // 
+            txtseccion.BackColor = Color.FromArgb(13, 13, 13);
+            txtseccion.CharacterCasing = CharacterCasing.Upper;
+            txtseccion.Cursor = Cursors.IBeam;
+            txtseccion.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtseccion.ForeColor = Color.White;
+            txtseccion.Location = new Point(81, 229);
+            txtseccion.Margin = new Padding(20);
+            txtseccion.MaxLength = 1;
+            txtseccion.Name = "txtseccion";
+            txtseccion.PlaceholderText = "Ingrese sección";
+            txtseccion.ShortcutsEnabled = false;
+            txtseccion.Size = new Size(314, 37);
+            txtseccion.TabIndex = 27;
+            // 
+            // txtmateria
+            // 
+            txtmateria.BackColor = Color.FromArgb(13, 13, 13);
+            txtmateria.Cursor = Cursors.IBeam;
+            txtmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtmateria.ForeColor = Color.White;
+            txtmateria.Location = new Point(81, 137);
+            txtmateria.Margin = new Padding(20);
+            txtmateria.MaxLength = 50;
+            txtmateria.Name = "txtmateria";
+            txtmateria.PlaceholderText = "Ingrese materia";
+            txtmateria.ShortcutsEnabled = false;
+            txtmateria.Size = new Size(314, 37);
+            txtmateria.TabIndex = 26;
             // 
             // FormFiltroCurso
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(13, 13, 13);
-            ClientSize = new Size(482, 455);
-            Controls.Add(cmbseccion);
-            Controls.Add(cmbmateria);
+            ClientSize = new Size(482, 405);
+            Controls.Add(txtseccion);
+            Controls.Add(txtmateria);
             Controls.Add(labelsec);
             Controls.Add(labelmateria);
-            Controls.Add(aceptar);
+            Controls.Add(filtrar);
             Controls.Add(title);
             Name = "FormFiltroCurso";
             StartPosition = FormStartPosition.CenterScreen;
@@ -129,12 +136,11 @@
         }
 
         #endregion
-
-        private ComboBox cmbseccion;
-        private ComboBox cmbmateria;
         private Label labelsec;
         private Label labelmateria;
-        private Button aceptar;
+        private Button filtrar;
         private Label title;
+        private TextBox txtseccion;
+        private TextBox txtmateria;
     }
 }

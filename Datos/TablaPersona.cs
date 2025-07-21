@@ -111,7 +111,13 @@ namespace Sistema_Academia.Datos
 
             try
             {
-                var queryBase = _config["Persona:FiltroCombinado"];
+                var queryBase = @"
+            SELECT p.persona_id, p.persona_ci, p.persona_no, p.persona_ap, tp.tipo_persona_de 
+            FROM persona p 
+            JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id 
+            WHERE 1=1 {0} 
+            ORDER BY p.persona_ci;
+        ";
                 var queryFinal = string.Format(queryBase, condiciones.ToString());
 
                 using (var manejador = new ManejadorConexion(new Conexion()))
@@ -133,29 +139,24 @@ namespace Sistema_Academia.Datos
             return dt;
         }
 
-        public DataTable ObtenerMaterias()
-        {
-            return EjecutarConsulta(_config["Persona:ObtenerMaterias"]);
-        }
-
-        public DataTable ObtenerSecciones()
-        {
-            return EjecutarConsulta(_config["Persona:ObtenerSecciones"]);
-        }
-
         public DataTable ObtenerTiposPersona()
         {
-            return EjecutarConsulta(_config["Persona:ObtenerTiposPersona"]);
-        }
-
-        private DataTable EjecutarConsulta(string query)
-        {
             var dt = new DataTable();
-            using (var manejador = new ManejadorConexion(new Conexion()))
-            using (var cmd = new NpgsqlCommand(query, manejador.ConexionAbierta))
-            using (var lector = cmd.ExecuteReader())
+            try
             {
-                dt.Load(lector);
+                var q = _config["Persona:ObtenerTipoPersona"];
+                using (var manejador = new ManejadorConexion(new Conexion()))
+                using (var cmd = new NpgsqlCommand(q, manejador.ConexionAbierta))
+                {
+                    using (var lector = cmd.ExecuteReader())
+                    {
+                        dt.Load(lector);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener tipos de persona", ex);
             }
             return dt;
         }
