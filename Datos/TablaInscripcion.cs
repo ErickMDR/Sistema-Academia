@@ -21,24 +21,34 @@ namespace Sistema_Academia.Datos
         }
         public void Insertar(Inscripcion inscripcion)
         {
-            using var m = new ManejadorConexion(new Conexion());
-            var personaId = ObtenerPersonaId(inscripcion.Cedula, m.ConexionAbierta);
-            var cursoId = ObtenerCursoId(inscripcion.Materia, inscripcion.Seccion, m.ConexionAbierta);
-
-            if (personaId == 0)
+            try
             {
-                throw new Exception($"No se encontró a la persona de cédula {inscripcion.Cedula}");
-            }
+                using var m = new ManejadorConexion(new Conexion());
+                var personaId = ObtenerPersonaId(inscripcion.Cedula, m.ConexionAbierta);
+                var cursoId = ObtenerCursoId(inscripcion.Materia, inscripcion.Seccion, m.ConexionAbierta);
 
-            if (cursoId <= 0)
-            {
-                throw new Exception($"No se encontró un curso válido para {inscripcion.Materia} - {inscripcion.Seccion}");
+                if (personaId == 0)
+                {
+                    throw new Exception($"No se encontró a la persona de cédula {inscripcion.Cedula}");
+                }
+
+                if (cursoId <= 0)
+                {
+                    throw new Exception($"No se encontró un curso válido para {inscripcion.Materia} - {inscripcion.Seccion}");
+                }
+                var query = _config["Inscripcion:Inscribir"];
+                using var cmd = new NpgsqlCommand(query, m.ConexionAbierta);
+                cmd.Parameters.AddWithValue("@personaId", personaId);
+                cmd.Parameters.AddWithValue("@cursoId", cursoId);
+                int a = cmd.ExecuteNonQuery();
+                if (a == 0) throw new Exception("No se pudo realizar la inscripción");
             }
-            var query = _config["Inscripcion:Inscribir"];
-            using var cmd = new NpgsqlCommand(query, m.ConexionAbierta);
-            cmd.Parameters.AddWithValue("@personaId", inscripcion.PersonaId);
-            cmd.Parameters.AddWithValue("@cursoId", inscripcion.CursoId);
-            cmd.ExecuteNonQuery();
+            catch (Npgsql.PostgresException ex) when(ex.SqlState == "23503")
+            {
+                throw new Exception("Error. Verifique que:\n" +
+                              "1. La persona existe\n" +
+                              "2. El curso está configurado correctamente");
+            }
         }
 
         private int ObtenerPersonaId(string cedula, NpgsqlConnection conexion)
