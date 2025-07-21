@@ -188,7 +188,7 @@
             buscar.Name = "buscar";
             buscar.Size = new Size(162, 56);
             buscar.TabIndex = 28;
-            buscar.Text = "Buscar";
+            buscar.Text = "Filtrar";
             buscar.UseMnemonic = false;
             buscar.UseVisualStyleBackColor = false;
             buscar.Click += buscar_Click;

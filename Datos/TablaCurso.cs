@@ -4,6 +4,7 @@ using Sistema_Academia.Entidades;
 using System;
 using System.Data;
 using System.IO;
+using System.Text;
 
 namespace Sistema_Academia.Datos
 {
@@ -19,17 +20,6 @@ namespace Sistema_Academia.Datos
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("queries.json")
                 .Build();
-        }
-
-        public DataTable Listado()
-        {
-            var dt = new DataTable();
-            var query = _config["Curso:Leer"];
-            using var m = new ManejadorConexion(new Conexion());
-            using var cmd = new NpgsqlCommand(query, m.ConexionAbierta);
-            using var reader = cmd.ExecuteReader();
-            dt.Load(reader);
-            return dt;
         }
 
         public DataTable BuscarCursosPorCedulaProfesor(int cedulaProfesor)
@@ -85,6 +75,48 @@ namespace Sistema_Academia.Datos
             cmd.Parameters.AddWithValue("@seccionId", seccionId);
             var result = cmd.ExecuteScalar();
             return result == null ? 0 : Convert.ToInt32(result);
+        }
+
+        public DataTable Filtrar(string materia = null, string seccion = null)
+        {
+            var dt = new DataTable();
+            var condiciones = new StringBuilder();
+            var parametros = new List<NpgsqlParameter>();
+
+            if (!string.IsNullOrEmpty(materia))
+            {
+                condiciones.Append(" AND m.materia_de ILIKE @materia");
+                parametros.Add(new NpgsqlParameter("@materia", $"%{materia}%"));
+            }
+
+            if (!string.IsNullOrEmpty(seccion))
+            {
+                condiciones.Append(" AND s.seccion_de ILIKE @seccion");
+                parametros.Add(new NpgsqlParameter("@seccion", $"%{seccion}%"));
+            }
+
+            try
+            {
+                var queryBase = _config["Curso:FiltroCombinado"];
+                var queryFinal = string.Format(queryBase, condiciones.ToString());
+
+                using (var manejador = new ManejadorConexion(new Conexion()))
+                using (var cmd = new NpgsqlCommand(queryFinal, manejador.ConexionAbierta))
+                {
+                    cmd.Parameters.AddRange(parametros.ToArray());
+
+                    using (var lector = cmd.ExecuteReader())
+                    {
+                        dt.Load(lector);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al filtrar cursos", ex);
+            }
+
+            return dt;
         }
     }
 }

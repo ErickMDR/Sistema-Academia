@@ -1,9 +1,10 @@
-﻿using System;
-using System.Data;
-using System.Windows.Forms;
-using Sistema_Academia.Datos;
+﻿using Sistema_Academia.Datos;
 using Sistema_Academia.Entidades;
 using Sistema_Academia.Presentacion.Agregar;
+using Sistema_Academia.Presentacion.Filtros;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Sistema_Academia.Presentacion
 {
@@ -177,6 +178,18 @@ namespace Sistema_Academia.Presentacion
                                   "Error",
                                   MessageBoxButtons.OK,
                                   MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void filtro_Click(object sender, EventArgs e)
+        {
+            using (var formFiltro = new FormFiltroCurso())
+            {
+                if (formFiltro.ShowDialog() == DialogResult.OK)
+                {
+                    dataGridViewTabla.DataSource = formFiltro.CursosFiltrados;
+                    AgregarHeaders();
                 }
             }
         }

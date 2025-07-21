@@ -100,7 +100,7 @@
             aceptar.FlatStyle = FlatStyle.Flat;
             aceptar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             aceptar.ForeColor = Color.Snow;
-            aceptar.Location = new Point(154, 406);
+            aceptar.Location = new Point(156, 406);
             aceptar.Name = "aceptar";
             aceptar.Size = new Size(162, 56);
             aceptar.TabIndex = 40;
@@ -178,10 +178,6 @@
         private Button aceptar;
         private TextBox txtcedula;
         private Label labelci;
-        private TextBox txtapellido;
-        private Label labelna;
-        private Label labelap;
-        private TextBox txtnombre;
         private Label labelsec;
         private Label labelmateria;
         private ComboBox cmbSeccion;

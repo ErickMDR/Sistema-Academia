@@ -1,83 +1,43 @@
 ﻿using Sistema_Academia.Datos;
 using Sistema_Academia.Entidades;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Windows.Forms;
 
 namespace Sistema_Academia.Presentacion.Filtros
 {
     public partial class FormFiltroPersona : Form
     {
-        private readonly TablaPersona _tablaPersona;
-        public List<Persona> PersonasFiltradas { get; private set; }
-
+        public DataTable PersonasFiltradas { get; private set; }
         public FormFiltroPersona()
         {
             InitializeComponent();
-            _tablaPersona = new TablaPersona();
-            PersonasFiltradas = new List<Persona>();
             this.AcceptButton = aceptar;
+            CargarTiposPersona();
         }
-
-        private void filtro_Click(object sender, EventArgs e)
+        private void aceptar_Click(object sender, EventArgs e)
         {
             try
             {
-               // string nombre = txtnombre.Text.Trim();
-                //string apellido = txtapellido.Text.Trim();
-                //string cedula = txtcedula.Text.Trim();
-                //string materia = txtmateria.Text.Trim();
-                //string seccion = txtseccion.Text.Trim();
-
-                Dictionary<string, object> parametros = new Dictionary<string, object>();
-                List<string> condiciones = new List<string>();
-
-                /*if (!string.IsNullOrEmpty(nombre))
+                using (var tablaPersona = new TablaPersona())
                 {
-                    parametros.Add("@nombre", $"%{nombre}%");
-                    condiciones.Add("p.persona_no LIKE @nombre");
+                    PersonasFiltradas = tablaPersona.Filtrar(
+                        materia: txtmateria.Text.Trim(),
+                        seccion: txtseccion.Text.Trim(),
+                        tipoPersona: cmbtipopersona.Text.Trim()
+                    );
+
+                    if (PersonasFiltradas.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron resultados con los criterios de búsqueda",
+                                         "Información",
+                                         MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
                 }
-
-                if (!string.IsNullOrEmpty(apellido))
-                {
-                    parametros.Add("@apellido", $"%{apellido}%");
-                    condiciones.Add("p.persona_ap LIKE @apellido");
-                }
-
-                if (!string.IsNullOrEmpty(cedula))
-                {
-                    parametros.Add("@ci", cedula);
-                    condiciones.Add("p.persona_ci = @ci");
-                }
-
-                if (!string.IsNullOrEmpty(materia))
-                {
-                    parametros.Add("@materia", $"%{materia}%");
-                    condiciones.Add("p.persona_id IN (SELECT DISTINCT c.persona_id FROM curso c JOIN materia m ON c.materia_id = m.materia_id WHERE m.materia_de LIKE @materia)");
-                }
-
-                if (!string.IsNullOrEmpty(seccion))
-                {
-                    parametros.Add("@seccion", $"%{seccion}%");
-                    condiciones.Add("p.persona_id IN (SELECT DISTINCT c.persona_id FROM curso c JOIN seccion s ON c.seccion_id = s.seccion_id WHERE s.seccion_de LIKE @seccion)");
-                }*/
-
-                string whereClause = condiciones.Count > 0 ? "WHERE " + string.Join(" AND ", condiciones) : "";
-
-                string query = $@"
-                    SELECT DISTINCT p.*, 
-                           CASE WHEN p.tipo_persona_id = 1 THEN 'Profesor' ELSE 'Estudiante' END AS tipo_persona
-                    FROM persona p
-                    LEFT JOIN tipo_persona t ON p.tipo_persona_id = t.tipo_persona_id
-                    {whereClause}
-                    ORDER BY p.persona_ap, p.persona_no";
-
-                //var dt = _tablaPersona.EjecutarConsultaDinamica(query, parametros);
-                //PersonasFiltradas = ConvertirDataTableALista(dt);
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
             }
             catch (Exception ex)
             {
@@ -85,22 +45,23 @@ namespace Sistema_Academia.Presentacion.Filtros
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private List<Persona> ConvertirDataTableALista(DataTable dt)
+        private void CargarTiposPersona()
         {
-            var lista = new List<Persona>();
-            foreach (DataRow row in dt.Rows)
+            try
             {
-                lista.Add(new Persona
+                using (var tablaPersona = new TablaPersona())
                 {
-                    Id = Convert.ToInt32(row["persona_id"]),
-                    Nombre = row["persona_no"].ToString(),
-                    Apellido = row["persona_ap"].ToString(),
-                    Cedula = Convert.ToInt32(row["persona_ci"]),
-                    TipoPersona = row["tipo_persona"].ToString()
-                });
+                    DataTable tiposPersona = tablaPersona.ObtenerTiposPersona();
+                    cmbtipopersona.DataSource = tiposPersona;
+                    cmbtipopersona.DisplayMember = "tipo_persona_de"; 
+                    cmbtipopersona.ValueMember = "tipo_persona_id"; 
+                    cmbtipopersona.SelectedIndex = -1; 
+                }
             }
-            return lista;
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar tipos de persona: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

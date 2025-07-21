@@ -187,6 +187,7 @@ namespace Sistema_Academia.Presentacion
             filtros.TextAlign = ContentAlignment.MiddleRight;
             filtros.UseMnemonic = false;
             filtros.UseVisualStyleBackColor = false;
+            filtros.Click += filtro_Click;
             // 
             // eliminar
             // 

@@ -39,10 +39,7 @@ namespace Sistema_Academia.Presentacion.Agregar
             if (prof != null)
             {
                 txtcedula.Text = prof.Cedula.ToString();
-                txtnombre.Text = prof.Nombre;
-                txtapellido.Text = prof.Apellido;
             }
-
             cmbMateria.SelectedValue = curso.MateriaId;
             cmbSeccion.SelectedValue = curso.SeccionId;
 
@@ -78,9 +75,6 @@ namespace Sistema_Academia.Presentacion.Agregar
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            txtnombre.Text = prof.Nombre;
-            txtapellido.Text = prof.Apellido;
         }
 
         private void Aceptar_Click(object sender, EventArgs e)

@@ -42,7 +42,7 @@
             piceliminar = new PictureBox();
             picinscribir = new PictureBox();
             txtcedula = new TextBox();
-            filtros = new Button();
+            filtro = new Button();
             eliminar = new Button();
             panelNotas = new Panel();
             dataGridViewTabla = new DataGridView();
@@ -86,7 +86,7 @@
             panelInfo.Controls.Add(piceliminar);
             panelInfo.Controls.Add(picinscribir);
             panelInfo.Controls.Add(txtcedula);
-            panelInfo.Controls.Add(filtros);
+            panelInfo.Controls.Add(filtro);
             panelInfo.Controls.Add(eliminar);
             panelInfo.Controls.Add(agregar);
             panelInfo.Controls.Add(panelNotas);
@@ -187,23 +187,24 @@
             txtcedula.Size = new Size(184, 37);
             txtcedula.TabIndex = 3;
             // 
-            // filtros
+            // filtro
             // 
-            filtros.BackColor = Color.FromArgb(22, 18, 30);
-            filtros.Cursor = Cursors.Hand;
-            filtros.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
-            filtros.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
-            filtros.FlatStyle = FlatStyle.Flat;
-            filtros.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            filtros.ForeColor = Color.Snow;
-            filtros.Location = new Point(326, 18);
-            filtros.Name = "filtros";
-            filtros.Size = new Size(105, 40);
-            filtros.TabIndex = 2;
-            filtros.Text = "Filtros";
-            filtros.TextAlign = ContentAlignment.MiddleRight;
-            filtros.UseMnemonic = false;
-            filtros.UseVisualStyleBackColor = false;
+            filtro.BackColor = Color.FromArgb(22, 18, 30);
+            filtro.Cursor = Cursors.Hand;
+            filtro.FlatAppearance.BorderColor = Color.FromArgb(22, 18, 30);
+            filtro.FlatAppearance.MouseOverBackColor = Color.MediumPurple;
+            filtro.FlatStyle = FlatStyle.Flat;
+            filtro.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            filtro.ForeColor = Color.Snow;
+            filtro.Location = new Point(326, 18);
+            filtro.Name = "filtro";
+            filtro.Size = new Size(105, 40);
+            filtro.TabIndex = 2;
+            filtro.Text = "Filtros";
+            filtro.TextAlign = ContentAlignment.MiddleRight;
+            filtro.UseMnemonic = false;
+            filtro.UseVisualStyleBackColor = false;
+            filtro.Click += filtro_Click;
             // 
             // eliminar
             // 
@@ -319,7 +320,7 @@
         public DataGridView dataGridViewTabla;
         private Label title;
         private Button eliminar;
-        private Button filtros;
+        private Button filtro;
         private TextBox txtcedula;
         private PictureBox picfiltro;
         private PictureBox piceliminar;
