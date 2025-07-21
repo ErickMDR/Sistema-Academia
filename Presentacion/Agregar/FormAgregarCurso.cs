@@ -40,7 +40,6 @@ namespace Sistema_Academia.Presentacion.Agregar
             {
                 txtcedula.Text = prof.Cedula.ToString();
             }
-
             cmbMateria.SelectedValue = curso.MateriaId;
             cmbSeccion.SelectedValue = curso.SeccionId;
 

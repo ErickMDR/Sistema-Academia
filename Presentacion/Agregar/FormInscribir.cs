@@ -12,18 +12,11 @@ namespace Sistema_Academia.Presentacion.Agregar
 {
     public partial class FormInscribir : Form
     {
-        private readonly IConfigurationRoot _config;
-
         public bool InscripcionExitosa { get; private set; }
 
         public FormInscribir()
         {
             InitializeComponent();
-
-            _config = new ConfigurationBuilder()
-                .SetBasePath(Application.StartupPath)
-                .AddJsonFile("queries.json")
-                .Build();
 
             this.Load += (s, e) => CargarCombos();
             aceptar.Click += aceptar_Click;
