@@ -111,13 +111,7 @@ namespace Sistema_Academia.Datos
 
             try
             {
-                var queryBase = @"
-            SELECT p.persona_id, p.persona_ci, p.persona_no, p.persona_ap, tp.tipo_persona_de 
-            FROM persona p 
-            JOIN tipo_persona tp ON p.tipo_persona_id = tp.tipo_persona_id 
-            WHERE 1=1 {0} 
-            ORDER BY p.persona_ci;
-        ";
+                var queryBase = _config["Persona:FiltroCombinado"];
                 var queryFinal = string.Format(queryBase, condiciones.ToString());
 
                 using (var manejador = new ManejadorConexion(new Conexion()))

@@ -66,9 +66,9 @@
             asignarNota.FlatStyle = FlatStyle.Flat;
             asignarNota.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             asignarNota.ForeColor = Color.Snow;
-            asignarNota.Location = new Point(150, 557);
+            asignarNota.Location = new Point(156, 557);
             asignarNota.Name = "asignarNota";
-            asignarNota.Size = new Size(190, 48);
+            asignarNota.Size = new Size(162, 56);
             asignarNota.TabIndex = 17;
             asignarNota.Text = "Asignar";
             asignarNota.UseVisualStyleBackColor = true;
@@ -89,12 +89,14 @@
             // 
             txtcedula.BackColor = Color.FromArgb(13, 13, 13);
             txtcedula.CharacterCasing = CharacterCasing.Lower;
+            txtcedula.Enabled = false;
             txtcedula.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtcedula.ForeColor = Color.White;
             txtcedula.Location = new Point(84, 131);
             txtcedula.Margin = new Padding(20);
             txtcedula.MaxLength = 20;
             txtcedula.Name = "txtcedula";
+            txtcedula.ReadOnly = true;
             txtcedula.ShortcutsEnabled = false;
             txtcedula.Size = new Size(314, 37);
             txtcedula.TabIndex = 14;
@@ -135,12 +137,14 @@
             // txtmateria
             // 
             txtmateria.BackColor = Color.FromArgb(13, 13, 13);
+            txtmateria.Enabled = false;
             txtmateria.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtmateria.ForeColor = Color.White;
             txtmateria.Location = new Point(84, 385);
             txtmateria.Margin = new Padding(20);
             txtmateria.MaxLength = 50;
             txtmateria.Name = "txtmateria";
+            txtmateria.ReadOnly = true;
             txtmateria.ShortcutsEnabled = false;
             txtmateria.Size = new Size(314, 37);
             txtmateria.TabIndex = 22;
@@ -148,12 +152,14 @@
             // txtapellido
             // 
             txtapellido.BackColor = Color.FromArgb(13, 13, 13);
+            txtapellido.Enabled = false;
             txtapellido.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtapellido.ForeColor = Color.White;
             txtapellido.Location = new Point(84, 299);
             txtapellido.Margin = new Padding(20);
             txtapellido.MaxLength = 30;
             txtapellido.Name = "txtapellido";
+            txtapellido.ReadOnly = true;
             txtapellido.ShortcutsEnabled = false;
             txtapellido.Size = new Size(314, 37);
             txtapellido.TabIndex = 18;
@@ -183,12 +189,14 @@
             // txtnombre
             // 
             txtnombre.BackColor = Color.FromArgb(13, 13, 13);
+            txtnombre.Enabled = false;
             txtnombre.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtnombre.ForeColor = Color.White;
             txtnombre.Location = new Point(84, 215);
             txtnombre.Margin = new Padding(20);
             txtnombre.MaxLength = 30;
             txtnombre.Name = "txtnombre";
+            txtnombre.ReadOnly = true;
             txtnombre.ShortcutsEnabled = false;
             txtnombre.Size = new Size(314, 37);
             txtnombre.TabIndex = 20;

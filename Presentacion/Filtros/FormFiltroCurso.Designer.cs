@@ -66,9 +66,9 @@
             filtrar.FlatStyle = FlatStyle.Flat;
             filtrar.Font = new Font("Segoe UI", 13.7739134F, FontStyle.Regular, GraphicsUnit.Point, 0);
             filtrar.ForeColor = Color.Snow;
-            filtrar.Location = new Point(142, 309);
+            filtrar.Location = new Point(157, 309);
             filtrar.Name = "filtrar";
-            filtrar.Size = new Size(190, 48);
+            filtrar.Size = new Size(162, 56);
             filtrar.TabIndex = 23;
             filtrar.Text = "Filtrar";
             filtrar.UseVisualStyleBackColor = true;
